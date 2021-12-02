@@ -1,6 +1,10 @@
 :root {
     --main-bg-color: rgb(16, 3, 46) ;
+    --starwars-yellow: #FFE919;
 }
+
+
+/* BACKGROUND */
 
 body {
     background-color: var(--main-bg-color);
@@ -13,9 +17,23 @@ body {
    background-position: center;
    background-image: url('../images/background_stars.jpg');
    background-size: cover;   
-   filter: grayscale(0.25);
-   filter: brightness(0.9);
+   background-repeat: no-repeat;
+   /* filter: grayscale(55%); */
    backdrop-filter: var(--main-bg-color);
    left: 0;
  }
+
+
+.quiz-main-menu {
+    display: flex;
+    margin: 5vw 10vw 0 10vw;
+    width: minmax(75vw, 90vw);
+    height: clamp(25em, 25em, 100%);
+    border: solid var(--starwars-yellow) 1.5rem;
+    border-radius: 3.5em;
+    background: rgba(0,0,0,0.5);
+    transform: opacity(0.6);
+    box-shadow: 1px 1px 120px var(--starwars-yellow);
+}
+
 
