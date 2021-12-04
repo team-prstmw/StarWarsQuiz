@@ -1,44 +1,43 @@
 :root {
-    --main-bg-color: rgb(16, 3, 46) ;
+    --main-bg-color: rgb(16, 3, 46);
     --starwars-yellow: #FFE919;
 }
-
 
 /* BACKGROUND */
 
 body {
     background-color: var(--main-bg-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .main-bg-image {
-   width: 100%;
-   height: 170%;
-   position: absolute;
-   background-position: center;
-   background-image: url('../images/background_stars.jpg');
-   background-size: cover;   
-   background-repeat: no-repeat;
-   /* filter: grayscale(55%); */
-   backdrop-filter: var(--main-bg-color);
-   left: 0;
- }
+    width: 100%;
+    height: 170%;
+    position: absolute;
+    background-position: center;
+    background-image: url('../images/background_stars.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: var(--main-bg-color);
+    left: 0;
+}
 
+.main__logo-container {
+    min-width: 30%;
+    cursor: auto;
+}
 
-/* #main-container{
-    display:grid;
-} */
-
- .sw-logo {
-    width: 100px;
+.sw-logo {
+    width: auto;
     justify-self: flex-start;
     height: 50px;
-    background-image: url("../images/starwars_logo.png");
     background-repeat: no-repeat;
     background-size: 100px;
-    margin: 20px auto 20px 20px;
-
-
-
+    margin: 20px auto;
+    cursor: pointer;
 }
 
 .quiz-main-menu {
@@ -47,7 +46,7 @@ body {
     max-height: 40em;
     border: solid var(--starwars-yellow) 0.8rem;
     border-radius: 3.5em;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     transform: opacity(0.6);
     box-shadow: 1px 1px 120px var(--starwars-yellow);
     justify-content: center;
@@ -55,34 +54,29 @@ body {
     flex-wrap: wrap;
 }
 
-button {
+.game-mode-button {
     font-size: 28px;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     color: white;
     width: max-content;
     height: max-content;
     margin: 0.5em;
     margin-right: 1em;
-    padding:0 0.2em;
+    padding: 0 0.2em;
     border: none;
+    cursor: pointer;
 }
 
-/* Add BOTTOM MARGIN ON PORTRAIT MODE */
-/* button:last-of-type {
-    margin-bottom: 1em;
-} */
-
-button:hover  {
+.game-mode-button:hover {
     font-size: 28px;
     color: var(--starwars-yellow);
-    background-color: rgba(255,255,255,0.10);
-    border-top : white solid 2px;
-    border-bottom : white solid 2px;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-top: white solid 2px;
+    border-bottom: white solid 2px;
 }
 
-button:active {
-    background-color: rgba(255,255,255,0.30);
+.game-mode-button:active {
+    background-color: rgba(255, 255, 255, 0.30);
     color: wheat;
     border: none;
 }
-
