@@ -1,81 +1,116 @@
 :root {
-  --main-bg-color: rgb(16, 3, 46);
-  --starwars-yellow: #ffe919;
+    --main-bg-color: rgb(16, 3, 46);
+    --starwars-yellow: rgb(88%, 69%, 0%);
+    --logo-width: calc(150px * 1);
+    --nav-bar_height: 8em;
 }
 
 /* BACKGROUND */
 body {
-  background-color: var(--main-bg-color);
+    background-color: var(--main-bg-color);
+    margin: 0;
 }
 
 .main-bg-image {
-  width: 100%;
-  height: 170%;
-  position: absolute;
-  background-position: center;
-  background-image: url("../images/background_stars.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* filter: grayscale(55%); */
-  backdrop-filter: var(--main-bg-color);
-  left: 0;
+    width: 100%;
+    height: 170%;
+    position: absolute;
+    background-position: center;
+    background-image: url("../images/background_stars.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* filter: grayscale(55%); */
+    backdrop-filter: var(--main-bg-color);
+    left: 0;
 }
 
-/* #main-container{
-    display:grid;
-} */
+#main-containter {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: var(--logo-width) 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "logo     bar     bar"
+        "content content content";
+}
 
 .sw-logo {
-  width: 100px;
-  justify-self: flex-start;
-  height: 50px;
-  background-image: url("../images/starwars_logo.png");
-  background-repeat: no-repeat;
-  background-size: 100px;
-  margin: 20px auto 20px 20px;
+    grid-area: logo;
+    align-self: start;
+    background-size: 100px;
+    width: 100px;
+    height: 50px;
+    background-image: url("../images/starwars_logo.png");
+    background-repeat: no-repeat;
+    margin-top: 1em;
 }
 
+/* QUIZ MENU */
 .quiz-main-menu {
-  display: flex;
-  margin: 5vw 10vw 0 10vw;
-  max-height: 40em;
-  border: solid var(--starwars-yellow) 0.8rem;
-  border-radius: 3.5em;
-  background: rgba(0, 0, 0, 0.5);
-  transform: opacity(0.6);
-  box-shadow: 1px 1px 120px var(--starwars-yellow);
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+    margin-top: 1.5em;
+    box-sizing: border-box;
+    grid-area: bar;
+    display: flex;
+    margin-right: 1em;
+    max-height: a;
+    border: solid var(--starwars-yellow) 0.5rem;
+    border-radius: 3em;
+    background: rgba(0, 0, 0, 0.40);
+    box-shadow: 1px 1px 120px var(--starwars-yellow);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
+/* QUIZ MENU CONTENT */
 button {
-  font-size: 28px;
-  background: rgba(0, 0, 0, 0.2);
-  color: white;
-  width: max-content;
-  height: max-content;
-  margin: 0.5em;
-  margin-right: 1em;
-  padding: 0 0.2em;
-  border: none;
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    width: max-content;
+    height: max-content;
+    margin: 0.5em 0.5em;
+    padding: 0 0.5em;
 }
 
-/* Add BOTTOM MARGIN ON PORTRAIT MODE */
-/* button:last-of-type {
-    margin-bottom: 1em;
+/* button:first-of-type {
+    margin-left: 1em;
+}
+
+button:last-of-type {
+    margin-right: 1em;
 } */
 
 button:hover {
-  font-size: 28px;
-  color: var(--starwars-yellow);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-top: white solid 2px;
-  border-bottom: white solid 2px;
+    font-size: 28px;
+    color: var(--starwars-yellow);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-top: white solid 2px;
+    border-bottom: white solid 2px;
+    box-shadow: 1px 1px 100px var(--starwars-yellow);
 }
 
 button:active {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: wheat;
-  border: none;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 1px 1px 100px white;
+}
+
+@media only screen and (max-width: 660px){
+    #main-containter {
+        display: block;
+    }
+
+    .sw-logo {
+        margin: 1em auto 3em auto;
+    }
+
+    .quiz-main-menu {
+        margin:2em 1.5em;
+        align-content: center;
+        flex-flow: column;
+        flex-wrap: wrap;
+    }
 }
