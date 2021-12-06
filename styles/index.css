@@ -97,7 +97,7 @@ button {
 }
 
 @media only screen and (max-width: 660px){
-    #main-containter {
+    #main-grid-container {
         display: block;
     }
 
