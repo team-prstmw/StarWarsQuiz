@@ -1,8 +1,7 @@
 :root {
     --main-bg-color: rgb(16, 3, 46);
     --starwars-yellow: rgb(88%, 69%, 0%);
-    --logo-width: calc(150px * 1);
-    --nav-bar_height: 8em;
+    --logo-width: 150px ;
 }
 
 /* BACKGROUND */
@@ -16,10 +15,9 @@ body {
     height: 170%;
     position: absolute;
     background-position: center;
-    background-image: url("../images/background_stars.jpg");
+    background-image: url("/images/background_stars.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /* filter: grayscale(55%); */
     backdrop-filter: var(--main-bg-color);
     left: 0;
 }
@@ -28,11 +26,11 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: var(--logo-width) 1fr 1fr;
+    grid-template-columns: 1fr 5fr;
     grid-template-rows: auto 1fr;
     grid-template-areas:
-        "logo     bar     bar"
-        "content content content";
+        "logo     navbar "
+        "content content ";
 }
 
 .sw-logo {
@@ -41,7 +39,7 @@ body {
     background-size: 100px;
     width: 100px;
     height: 50px;
-    background-image: url("../images/starwars_logo.png");
+    background-image: url("/images/starwars_logo.png");
     background-repeat: no-repeat;
     margin-top: 1em;
 }
@@ -50,17 +48,18 @@ body {
 .quiz-main-menu {
     margin-top: 1.5em;
     box-sizing: border-box;
-    grid-area: bar;
+    grid-area: navbar;
     display: flex;
     margin-right: 1em;
-    max-height: a;
     border: solid var(--starwars-yellow) 0.5rem;
     border-radius: 3em;
     background: rgba(0, 0, 0, 0.40);
     box-shadow: 1px 1px 120px var(--starwars-yellow);
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
+
 
 /* QUIZ MENU CONTENT */
 button {
@@ -72,15 +71,8 @@ button {
     height: max-content;
     margin: 0.5em 0.5em;
     padding: 0 0.5em;
+    cursor: pointer;
 }
-
-/* button:first-of-type {
-    margin-left: 1em;
-}
-
-button:last-of-type {
-    margin-right: 1em;
-} */
 
 button:hover {
     font-size: 28px;
