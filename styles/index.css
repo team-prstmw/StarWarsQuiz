@@ -10,19 +10,21 @@ body {
     margin: 0;
 }
 
+
 .main-bg-image {
     width: 100%;
     height: 170%;
     position: absolute;
     background-position: center;
-    background-image: url("/images/background_stars.jpg");
+    background-image: url("/images/background_stars.webp");
     background-size: cover;
     background-repeat: no-repeat;
     backdrop-filter: var(--main-bg-color);
     left: 0;
 }
 
-#main-containter {
+#main-grid-container {
+    max-width: 1440px;
     display: grid;
     align-items: center;
     justify-items: center;
