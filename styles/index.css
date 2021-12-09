@@ -26,16 +26,18 @@ body {
 }
 
 #main-grid-container {
+  height: 100vh;
   flex-grow: 1;
   max-width: 1960px;
   display: grid;
   align-items: center;
   justify-items: center;
+  row-gap: 10px;
   grid-template-columns: 1fr 5fr;
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content ';
+    'content mode-description ';
 }
 
 .sw-logo {
