@@ -8,6 +8,7 @@
 body {
   background-color: var(--main-bg-color);
   margin: 0;
+  cursor: url('/lightsaberPointer.cur'), auto;
 }
 
 .main-bg-image {
