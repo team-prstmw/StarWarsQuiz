@@ -14,8 +14,8 @@ export class indexPageModes {
         this.container.innerHTML = ''
         this.container.classList.add('index-page__container')
         
-        this.container.style.gridArea='mode-description'
-        this.container.style.margin='0 3rem'
+        this.container.style.gridArea='content'
+        this.container.style.margin='4.5rem 5vw'
         this.container.style.alignSelf='start'    
                 
         const containerElement1 = new Container(['main__header-container'])
