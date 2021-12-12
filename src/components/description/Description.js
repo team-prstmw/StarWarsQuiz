@@ -1,24 +1,17 @@
+import HtmlElement from '../htmlElement/HtmlElement';
 import './styles.css';
 
-export class Description {
-    constructor(label='', classList=[]) {
-        this.label = label        
-        this.classList = classList
-    }
+export class Description extends HtmlElement {
+  constructor(label = '', classList = [], htmlTag = 'p') {
+    super(classList, htmlTag);
+    this.label = label;
+  }
 
-    render() {
-        const description = document.createElement('p')
-
-        description.innerText = this.label
-
-        if (Array.isArray(this.classList)) {
-            this.classList.forEach(element => {
-                description.classList.add(element)
-            })
-        } 
-          
-        return description
-    }
+  show() {
+    const descriptionElement = this.render();
+    descriptionElement.innerText = this.label;
+    return descriptionElement;
+  }
 }
 
-export default Description
+export default Description;
