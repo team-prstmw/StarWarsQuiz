@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+.content-container {
+  background: white;
+}
+
 .main-bg-image {
   display: flex;
   justify-content: center;

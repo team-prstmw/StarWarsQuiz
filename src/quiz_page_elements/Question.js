@@ -1,3 +1,5 @@
+import './question.css';
+
 export default class Question {
   constructor(questionText) {
     this.p = document.createElement('p');

@@ -1,19 +1,19 @@
 import Question from './quiz_page_elements/Question';
 import Answer from './quiz_page_elements/Answer';
+import './quizpage.css';
 
 export default class QuizContainer {
   constructor(questionText, answersList) {
     this.div = document.createElement('div');
     this.div.id = 'quiz-container';
-    this.div.className = 'quiz-container';
+    // this.div.className = 'quiz-container';
+    this.div.className = 'quiz-container content-container';
 
     this.questionText = questionText;
     this.answersList = answersList;
   }
 
   render() {
-    this.div.style.background = 'red';
-
     const question = new Question(this.questionText).render();
     this.div.appendChild(question);
     const ul = document.createElement('ul');

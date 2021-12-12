@@ -1,3 +1,5 @@
+import './answer.css';
+
 export default class Answer {
   constructor(text) {
     this.li = document.createElement('li');
