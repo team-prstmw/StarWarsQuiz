@@ -1,10 +1,10 @@
 export default class Question {
   constructor(questionText) {
-    this.ul = document.createElement('ul');
-    this.ul.innerHTML = `${questionText}`;
+    this.p = document.createElement('p');
+    this.p.innerHTML = `${questionText}`;
   }
 
   render() {
-    return this.ul;
+    return this.p;
   }
 }

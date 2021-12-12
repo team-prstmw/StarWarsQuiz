@@ -15,13 +15,14 @@ export default class QuizContainer {
     this.div.style.background = 'red';
 
     const question = new Question(this.questionText).render();
-    for (let i = 0; i < this.answersList.length; i++) {
-      const answer = new Answer(this.answersList[i]).render();
-      question.appendChild(answer);
+    this.div.appendChild(question);
+    const ul = document.createElement('ul');
 
-      this.div.appendChild(question);
-      this.ul = this.div.querySelector('ul');
+    for (let i = 0; i < this.answersList.length; i += 1) {
+      const answer = new Answer(this.answersList[i]).render();
+      ul.appendChild(answer);
     }
+    this.div.appendChild(ul);
 
     return this.div;
   }
