@@ -1,5 +1,5 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
-import { addListenerToButtons } from './changeGameMode';
+import { addListenerToButtons } from './utils/changeGameMode';
 
 const indexPage = new IndexPageModes();
 
