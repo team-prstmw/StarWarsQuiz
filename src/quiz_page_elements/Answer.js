@@ -2,11 +2,11 @@ import './answer.css';
 
 export default class Answer {
   constructor(text) {
-    this.li = document.createElement('li');
-    this.li.innerHTML = text;
+    this.div = document.createElement('div');
+    this.div.innerHTML = text;
   }
 
   render() {
-    return this.li;
+    return this.div;
   }
 }

@@ -1,12 +1,11 @@
-import Question from './quiz_page_elements/Question';
-import Answer from './quiz_page_elements/Answer';
-import './quizpage.css';
+import Question from './Question';
+import Answer from './Answer';
+import './quizContainer.css';
 
 export default class QuizContainer {
   constructor(questionText, answersList) {
     this.div = document.createElement('div');
     this.div.id = 'quiz-container';
-    // this.div.className = 'quiz-container';
     this.div.className = 'quiz-container content-container';
 
     this.questionText = questionText;

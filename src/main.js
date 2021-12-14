@@ -1,10 +1,8 @@
-import QuizContainer from './quiz_page';
+import QuizContainer from './quiz_page_elements/QuizContainer';
 
-// eslint-disable-next-line prefer-const
-let fetchedQuestion = 'Who is this character?';
+const fetchedQuestion = 'Who is this character?';
 
-// eslint-disable-next-line prefer-const
-let fetchedAnswersList = ['answer A', 'answer B', 'answer C', 'answer D'];
+const fetchedAnswersList = ['answer A', 'answer B', 'answer C', 'answer D'];
 
 const quiz = new QuizContainer(fetchedQuestion, fetchedAnswersList);
 
