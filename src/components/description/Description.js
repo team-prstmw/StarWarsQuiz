@@ -3,13 +3,11 @@ import './styles.css';
 
 export class Description extends HtmlElement {
   constructor(label = '', classList = [], htmlTag = 'p') {
-    super(classList, htmlTag);
-    this.label = label;
+    super(classList, htmlTag, label);
   }
 
   show() {
     const descriptionElement = this.render();
-    descriptionElement.innerText = this.label;
     return descriptionElement;
   }
 }
