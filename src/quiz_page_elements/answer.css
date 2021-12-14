@@ -1,4 +1,13 @@
-li {
-  background: pink;
-  color: 'purple';
+.quiz-answer {
+  display: flex;
+  font-size: 24px;
+  font-weight: bold;
+  background: var(--starwars-yellow);
+  width: 300px;
+  height: 80px;
+  margin: 1em;
+  border-radius: 1rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

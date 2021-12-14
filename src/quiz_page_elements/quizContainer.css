@@ -1,2 +1,12 @@
 .quiz-container {
+  margin-top: 6rem;
+  width: auto;
+  background-color: black;
+  grid-area: content;
+  align-self: start;
+  justify-self: center;
+  outline: rgba(0, 0, 0, 0.2) solid 12px;
+  border-radius: 2rem;
+  display: grid;
+  /* grid-template-columns: 50% 50%; */
 }
