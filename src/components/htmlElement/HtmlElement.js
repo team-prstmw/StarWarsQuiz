@@ -1,7 +1,8 @@
 export class HtmlElement {
-  constructor(classList = [], htmlTag = null) {
+  constructor(classList = [], htmlTag = null, label = '') {
     this.classList = classList;
     this.htmlTag = htmlTag;
+    this.label = label;
   }
 
   render() {
@@ -12,6 +13,8 @@ export class HtmlElement {
         htmlElement.classList.add(element);
       });
     }
+
+    if (this.label) htmlElement.innerText = this.label;
 
     return htmlElement;
   }
