@@ -1,5 +1,5 @@
 .index-page__container {
   grid-area: dashboardGame;
-  margin: 0 3rem;
+  margin: 4.5rem 5vw;
   align-self: start;    
 }
