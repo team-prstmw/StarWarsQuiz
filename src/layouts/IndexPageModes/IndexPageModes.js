@@ -1,6 +1,7 @@
-import Header from '../components/header/Header';
-import Container from '../components/container/Container';
-import Description from '../components/description/Description';
+import Header from '../../components/header/Header';
+import Container from '../../components/container/Container';
+import Description from '../../components/description/Description';
+import './styles.css';
 
 export class IndexPageModes {
   render() {
@@ -8,10 +9,6 @@ export class IndexPageModes {
 
     container.innerHTML = '';
     container.classList.add('index-page__container');
-
-    container.style.gridArea = 'mode-description';
-    container.style.margin = '0 3rem';
-    container.style.alignSelf = 'start';
 
     const containerElement1 = new Container(['main__header-container'], 'div');
     const headerElement1 = new Header('MODE: Who is this character?', ['main__header'], 'h2');
