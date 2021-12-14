@@ -1,0 +1,21 @@
+.main__header-container,
+.main__modes-container {
+  background-color: white;
+  border-radius: 16px;
+}
+.main__header-container {
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
+}
+.main__modes-container {
+  padding-bottom: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.main__subheader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 1rem;
+}
