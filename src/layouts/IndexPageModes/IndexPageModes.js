@@ -3,7 +3,7 @@ import Container from '../../components/container/Container';
 import Description from '../../components/description/Description';
 import './styles.css';
 
-export class IndexPageModes {
+class IndexPageModes {
   render() {
     const container = document.createElement('section');
 
@@ -20,11 +20,11 @@ export class IndexPageModes {
       ['main__description']
     );
 
-    const HeaderContainerElement = new Container(['main__subheader-container']);
+    const HeaderContainerElement = new Container(['main__subheader-container'], 'div');
     const HeaderContainerElementRendered = HeaderContainerElement.render();
 
     const containerElement1Rendered = containerElement1.render();
-    containerElement1Rendered.appendChild(headerElement1.show());
+    containerElement1Rendered.appendChild(headerElement1.render());
 
     const modesContainerElementRendered = modesContainerElement.render();
 
@@ -32,10 +32,10 @@ export class IndexPageModes {
     graduationCapImage.src = '/school_24px.svg';
 
     HeaderContainerElementRendered.appendChild(graduationCapImage);
-    HeaderContainerElementRendered.appendChild(headerElement2.show());
+    HeaderContainerElementRendered.appendChild(headerElement2.render());
 
     modesContainerElementRendered.appendChild(HeaderContainerElementRendered);
-    modesContainerElementRendered.appendChild(descriptionElement.show());
+    modesContainerElementRendered.appendChild(descriptionElement.render());
 
     container.appendChild(containerElement1Rendered);
     container.appendChild(modesContainerElementRendered);
