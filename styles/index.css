@@ -37,7 +37,7 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content mode-description ';
+    'content dashboardGame ';
 }
 
 .sw-logo {
