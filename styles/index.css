@@ -37,7 +37,7 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content mode-description '
+    'content content '
     'content-button buttons';
 }
 
@@ -54,11 +54,11 @@ body {
 
 /* QUIZ MENU */
 .quiz-main-menu {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   box-sizing: border-box;
   grid-area: navbar;
   display: flex;
-  margin-right: 1em;
+  margin-right: 2em;
   border: solid var(--starwars-yellow) 0.2rem;
   border-radius: 3em;
   background: rgba(0, 0, 0, 0.4);
@@ -99,7 +99,6 @@ button {
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: 1px 1px 100px white;
 }
-
 
 @media only screen and (max-width: 660px) {
   #main-grid-container {

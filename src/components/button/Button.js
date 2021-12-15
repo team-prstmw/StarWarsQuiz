@@ -2,7 +2,7 @@ import './styles.css';
 
 class Button {
   constructor({ label = '', onClick = undefined, type = 'default', imageSrc = null, id, width = 'auto' }) {
-    this.is = id;
+    this.id = id;
     this.label = label;
     this.onClick = onClick;
     this.type = type;

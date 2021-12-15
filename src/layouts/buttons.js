@@ -1,50 +1,50 @@
 import Button from '../components/button/Button';
 
-export class Buttons {
+export class ButtonsContainer {
   constructor() {
-    this.buttons = null;
+    this.container = null;
   }
 
   render() {
-    if (!this.buttons) {
-      this.buttons = document.createElement('section');
+    if (!this.container) {
+      this.container = document.createElement('section');
     }
-    this.buttons.innerHTML = '';
-    this.buttons.classList.add('buttons__container');
-    this.buttons.style.gridArea = 'buttons';
-    this.buttons.style.margin = '1rem 0';
-    this.buttons.style.alignSelf = 'start';
-    this.buttons.style.minWidth = '100%';
-    this.buttons.style.gap = '10px';
-    this.buttons.style.display = 'flex';
-    this.buttons.style.justifyContent = 'space-between';
+    this.container.innerHTML = '';
+    this.container.classList.add('buttons__container');
+    this.container.style.gridArea = 'buttons';
+    this.container.style.margin = '1rem 0';
+    this.container.style.alignSelf = 'start';
+    this.container.style.minWidth = '100%';
+    this.container.style.gap = '10px';
+    this.container.style.display = 'flex';
+    this.container.style.justifyContent = 'space-between';
 
     // const ButtonSettings = new Button({ label: 'Settings', type: 'default', width: 'full' });
-    const ButtonHof = new Button({
+    const buttonHof = new Button({
       label: 'Hall of fame',
       type: 'hof',
       width: 'half',
     });
-    const ButtonPtg = new Button({
+    const buttonPtg = new Button({
       label: 'PLAY THE GAME',
       type: 'ptg',
       width: 'half',
     });
 
     // const ButtonSettingsRendered = ButtonSettings.render();
-    const ButtonHofRendered = ButtonHof.render();
-    const ButtonPtgRendered = ButtonPtg.render();
+    const ButtonHofRendered = buttonHof.render();
+    const ButtonPtgRendered = buttonPtg.render();
 
-    const hallOfFame_img = document.createElement('img');
-    hallOfFame_img.src = '/hall_of_fame.svg';
-    ButtonHofRendered.appendChild(hallOfFame_img);
+    const hallOfFameImage = document.createElement('img');
+    hallOfFameImage.src = '/hall_of_fame.svg';
+    ButtonHofRendered.appendChild(hallOfFameImage);
 
     // this.container.appendChild(ButtonSettingsRendered);
-    this.buttons.appendChild(ButtonHofRendered);
-    this.buttons.appendChild(ButtonPtgRendered);
+    this.container.appendChild(ButtonHofRendered);
+    this.container.appendChild(ButtonPtgRendered);
 
-    return this.buttons;
+    return this.container;
   }
 }
 
-export default Buttons;
+export default ButtonsContainer;
