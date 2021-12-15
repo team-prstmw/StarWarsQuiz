@@ -1,3 +1,5 @@
+import './saberTime.css';
+
 function createHTML() {
   const divOuter = document.createElement('div');
   divOuter.id = 'lightSaberProgresBar';
