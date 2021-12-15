@@ -70,3 +70,13 @@
   }
 }
 
+@media only screen and (max-width: 410px) {
+  button.button {
+    min-width: 100%;
+    font-size: 1.4rem;
+  }
+
+  button.button img {
+    width: 18px;
+  }
+}
