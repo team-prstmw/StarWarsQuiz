@@ -4,9 +4,9 @@ import './quizContainer.css';
 
 export default class QuizContainer {
   constructor(questionText, answersList) {
-    this.div = document.createElement('div');
-    this.div.id = 'quiz-container';
-    this.div.className = 'quiz-container content-container';
+    this.container = document.createElement('div');
+    this.container.id = 'quiz-container';
+    this.container.className = 'quiz-container content-container';
 
     this.questionText = questionText;
     this.answersList = answersList;
@@ -14,15 +14,15 @@ export default class QuizContainer {
 
   render() {
     const question = new Question(this.questionText).render();
-    this.div.appendChild(question);
-    const div = document.createElement('div');
+    this.container.appendChild(question);
 
+    const answerContainer = document.createElement('div');
+    answerContainer.className = 'answer-container';
     for (let i = 0; i < this.answersList.length; i += 1) {
       const answer = new Answer(this.answersList[i]).render();
-      div.appendChild(answer);
+      answerContainer.appendChild(answer);
     }
-    this.div.appendChild(div);
-
-    return this.div;
+    this.container.appendChild(answerContainer);
+    return this.container;
   }
 }
