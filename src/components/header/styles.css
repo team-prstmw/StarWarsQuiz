@@ -1,0 +1,34 @@
+.main__header,
+.main__subheader {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  line-height: 2rem;
+  text-align: center;
+}
+.main__header {
+  padding: 1rem 0.7rem;
+  font-weight: 600;
+}
+
+.main__subheader {
+  padding: 0 1rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px){
+  .main__header,
+  .main__subheader {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .main__header,
+  .main__subheader {
+    font-size: 2.625rem;
+    line-height: 3.2rem;
+  }
+}
