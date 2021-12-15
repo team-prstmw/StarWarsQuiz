@@ -1,7 +1,4 @@
-import createHTML from './htmlStruct.js';
-
-const ONE_MIN = 60;
-const ONE_SEC = 1000;
+import createHTML from './saberTimeStruct';
 
 class Time {
   constructor() {
@@ -20,12 +17,12 @@ class Time {
     this.limitTime = Time.parseSeconds(numberTime);
     this.displayTime(this.calcRemainingTime());
     this.clock = setInterval(() => {
-      this.currentTime += ONE_SEC;
+      this.currentTime += 1000;
       this.displayTime(this.calcRemainingTime());
       if (this.isStopped()) {
         this.stop();
       }
-    }, ONE_SEC);
+    }, 1000);
   }
 
   stop() {
@@ -44,12 +41,12 @@ class Time {
 
   static parseSeconds(time) {
     const [min, sec] = time.split(':').map(Number);
-    return min * ONE_MIN * ONE_SEC + sec * ONE_SEC;
+    return min * 60 * 1000 + sec * 1000;
   }
 
   static reParseTime(mili) {
-    let min = Math.floor(mili / ONE_SEC / ONE_MIN);
-    let sec = Math.floor((mili / ONE_SEC) % ONE_MIN);
+    let min = Math.floor(mili / 1000 / 60);
+    let sec = Math.floor((mili / 1000) % 60);
     min = String(min).padStart(2, '0');
     sec = String(sec).padStart(2, '0');
     return `${min}:${sec}`;
@@ -66,14 +63,15 @@ class Time {
     pom = Math.round((miliSec * 100) / firstLicz);
     return pom;
   }
+
+  setTime() {
+    const clock = new Time();
+    createHTML();
+    clock.start('01:00');
+  }
 }
 
-function setTime() {
-  const clock = new Time();
-  createHTML();
-  clock.start('01:00');
-}
-
-window.addEventListener('DOMContentLoaded', setTime());
+const test = new Time();
+test.setTime();
 
 // export default Time;
