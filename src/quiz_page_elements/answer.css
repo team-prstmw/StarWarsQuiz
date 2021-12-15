@@ -1,4 +1,5 @@
 .quiz-answer {
+  box-sizing: border-box;
   align-items: center;
   background: var(--starwars-yellow);
   border-radius: 1rem;
@@ -8,6 +9,7 @@
   font-weight: bold;
   height: 80px;
   justify-content: center;
-  margin: 0.2em;
+  margin: 0.5rem;
   width: 250px;
+  border: rgba(0, 0, 0, 0.9) solid 3px;
 }

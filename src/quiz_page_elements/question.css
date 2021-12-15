@@ -2,6 +2,7 @@
   background: black;
   border-radius: 1rem;
   color: var(--starwars-yellow);
+  outline: rgba(255, 255, 255, 0.2) solid 3px;
   display: flex;
   font-size: 28px;
   font-weight: bold;
@@ -9,6 +10,7 @@
   justify-content: center;
   padding: 1rem;
   margin: 1.4rem;
+  margin-top: 2.2rem;
   width: 400px;
   align-self: center;
   grid-column: span 2;
