@@ -1,7 +1,5 @@
 
 .container{
-    grid-area: 'buttons';
-    align-self: flex-start;
     min-width: 100%;
     gap: 10px;
     display: flex;

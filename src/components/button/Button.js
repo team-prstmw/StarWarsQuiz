@@ -1,11 +1,11 @@
 import './styles.css';
 
 class Button {
-  constructor({ label = '', onClick = undefined, type = 'default', imageSrc = null, id, width = 'auto' }) {
+  constructor({ label = '', onClick = null, buttonType = 'default', imageSrc = null, id, width = 'auto' }) {
     this.id = id;
     this.label = label;
     this.onClick = onClick;
-    this.type = type;
+    this.buttonType = buttonType;
     this.imageSrc = imageSrc;
     this.width = width;
   }
@@ -17,13 +17,13 @@ class Button {
     btn.appendChild(img);
     btn.innerText = this.label;
 
-    if (this.type === 'default') {
+    if (this.buttonType === 'default') {
       btn.className = 'button default';
     }
-    if (this.type === 'hof') {
+    if (this.buttonType === 'hof') {
       btn.className = 'button hof';
     }
-    if (this.type === 'ptg') {
+    if (this.buttonType === 'ptg') {
       btn.className = 'button ptg';
     }
     if (this.width === 'auto') {
@@ -35,7 +35,7 @@ class Button {
     if (this.width === 'half') {
       btn.style.width = '50%';
     }
-    btn.addEventListener('click', () => this.onClick());
+    btn.addEventListener('click', this.onClick);
 
     return btn;
   }

@@ -8,9 +8,8 @@ export class indexPageModes {
   }
 
   render() {
-    if (!this.container) {
-      this.container = document.createElement('section');
-    }
+    this.container = document.createElement('section');
+
     this.container.innerHTML = '';
     this.container.classList.add('index-page__container');
 
@@ -36,10 +35,10 @@ export class indexPageModes {
 
     const modesContainerElementRendered = modesContainerElement.render();
 
-    const graduationCap_img = document.createElement('img');
-    graduationCap_img.src = '/school_24px.svg';
+    const graduationCapImage = document.createElement('img');
+    graduationCapImage.src = '/school_24px.svg';
 
-    HeaderContainerElementRendered.appendChild(graduationCap_img);
+    HeaderContainerElementRendered.appendChild(graduationCapImage);
     HeaderContainerElementRendered.appendChild(headerElement2.render());
 
     modesContainerElementRendered.appendChild(HeaderContainerElementRendered);
