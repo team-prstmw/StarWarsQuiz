@@ -9,8 +9,8 @@ class Time {
   }
 
   displayTime(string) {
-    const $timeLeft = document.querySelector('.time');
-    $timeLeft.textContent = string;
+    const timeLeft = document.querySelector('.time');
+    timeLeft.textContent = string;
   }
 
   start(numberTime) {
@@ -53,9 +53,9 @@ class Time {
   }
 
   loadingBar() {
-    const $bar = document.querySelector('.saber');
+    const bar = document.querySelector('.saber');
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
-    $bar.style.width = `${leftPercent}%`;
+    bar.style.width = `${leftPercent}%`;
   }
 
   static countPercent(startTime, miliSeconds) {
