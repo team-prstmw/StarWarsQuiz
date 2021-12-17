@@ -1,9 +1,12 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
 import { addListenerToButtons } from './utils/changeGameMode';
+import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 
 const indexPage = new IndexPageModes();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render());
+const buttonsContainer = new ButtonsContainer();
+
+document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 
 document.addListenerToButtons = addListenerToButtons(
   ['.btn-characters', '.btn-vehicles', '.btn-starships'],

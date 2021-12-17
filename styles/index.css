@@ -37,7 +37,8 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content ';
+    'content content '
+    'content-button buttons';
 }
 
 .sw-logo {
