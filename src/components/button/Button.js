@@ -1,33 +1,34 @@
+import HtmlElement from '../htmlElement/HtmlElement';
 import './styles.css';
 
-class Button {
+class Button extends HtmlElement {
   constructor({ label = '', onClick = null, buttonType = 'default', imageSrc = null, id, width = 'auto' }) {
+    super(['button'], 'button', label);
     this.id = id;
-    this.label = label;
     this.onClick = onClick;
     this.buttonType = buttonType;
     this.imageSrc = imageSrc;
     this.width = width;
-    this.className = 'button';
   }
 
   render() {
-    const btn = document.createElement(`button`);
-    const img = document.createElement(`img`);
-    img.src = this.imageSrc;
-    btn.appendChild(img);
-    btn.innerText = this.label;
-    btn.className = this.className;
+    const btn = super.render();
+    if (this.imageSrc) {
+      const img = document.createElement(`img`);
+      img.src = this.imageSrc;
+      btn.appendChild(img);
+    }
 
     if (this.buttonType === 'default') {
-      btn.className = `${this.className} default`;
+      btn.classList.add('default');
     }
     if (this.buttonType === 'hof') {
-      btn.className = `${this.className} hof`;
+      btn.classList.add('hof');
     }
     if (this.buttonType === 'ptg') {
-      btn.className = `${this.className} ptg`;
+      btn.classList.add('ptg');
     }
+
     if (this.width === 'auto') {
       btn.style.width = 'auto';
     }
