@@ -8,6 +8,7 @@ class Button {
     this.buttonType = buttonType;
     this.imageSrc = imageSrc;
     this.width = width;
+    this.className = 'button';
   }
 
   render() {
@@ -16,15 +17,16 @@ class Button {
     img.src = this.imageSrc;
     btn.appendChild(img);
     btn.innerText = this.label;
+    btn.className = this.className;
 
     if (this.buttonType === 'default') {
-      btn.className = 'button default';
+      btn.className = `${this.className} default`;
     }
     if (this.buttonType === 'hof') {
-      btn.className = 'button hof';
+      btn.className = `${this.className} hof`;
     }
     if (this.buttonType === 'ptg') {
-      btn.className = 'button ptg';
+      btn.className = `${this.className} ptg`;
     }
     if (this.width === 'auto') {
       btn.style.width = 'auto';

@@ -1,20 +1,18 @@
 .button {
   height: auto;
-  width: auto;
   padding: 10px 25px;
   border-radius: 16px;
   border: none;
   background-color: white;
   text-align: center;
   font-family: Montserrat, sans-serif;
-  font-size: 2.6rem;
+  font-size: 1.4rem;
   font-style: normal;
   font-weight: 300;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.35);
   transition-property: background-color;
   transition-duration: 700ms;
-  min-width: max-content;
-  max-width: 100%;
+  min-width: 100%;
 }
 
 .default {
@@ -30,8 +28,8 @@
 }
 
 .hof img {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   margin: auto 10px auto 0;
 }
 
@@ -48,33 +46,35 @@
   background-color: rgb(201, 3, 3);
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (min-width: 360px) {
   button.button {
-    font-size: 1.4rem;
+    min-width: 100%;
+    font-size: 1.5rem;
+  }
+
+  button.button img {
+    width: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  button.button {
+    font-size: 1.75rem;
+    min-width: 50%;
+  }
+
+  button.button img {
+    width: 18px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  button.button {
+    font-size: 2rem;
+    min-width: 50%;
   }
 
   button.button img {
     width: 24px;
-  }
-}
-
-@media only screen and (max-width: 570px) {
-  button.button {
-    font-size: 1rem;
-  }
-
-  button.button img {
-    width: 18px;
-  }
-}
-
-@media only screen and (max-width: 410px) {
-  button.button {
-    min-width: 100%;
-    font-size: 1.4rem;
-  }
-
-  button.button img {
-    width: 18px;
   }
 }
