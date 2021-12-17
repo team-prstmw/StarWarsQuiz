@@ -58,16 +58,13 @@ class Time {
     $bar.style.width = `${leftPercent}%`;
   }
 
-  static countPercent(firstLicz, miliSec) {
-    let pom = null;
-    pom = Math.round((miliSec * 100) / firstLicz);
-    return pom;
+  static countPercent(startTime, miliSeconds) {
+    return Math.round((miliSeconds * 100) / startTime);
   }
 
   setTime() {
-    const clock = new Time();
     createHTML();
-    clock.start('01:00');
+    this.start('01:00');
   }
 }
 

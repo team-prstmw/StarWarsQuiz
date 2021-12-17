@@ -1,16 +1,9 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-color: grey;
-}
-
 #lightSaberProgresBar {
   position: relative;
 }
 
 #lightSaberProgresBar img {
   width: 315px;
-  height: 315px;
   transform: rotate(90deg);
 }
 

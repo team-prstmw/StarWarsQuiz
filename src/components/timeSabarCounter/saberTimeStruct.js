@@ -5,7 +5,7 @@ function createHTML() {
   divOuter.id = 'lightSaberProgresBar';
 
   const image = document.createElement('img');
-  image.src = './images/sabre.png';
+  image.src = 'images/sabre.png';
   image.alt = 'Saber shaft';
 
   const divProgresBar = document.createElement('div');
