@@ -1,4 +1,4 @@
-import QuizContainer from './quiz_page_elements/QuizContainer';
+import QuizContainer from './quizPageElements/QuizContainer';
 
 const fetchedQuestion = 'Who is this character?';
 
