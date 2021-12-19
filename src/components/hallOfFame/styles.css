@@ -1,0 +1,21 @@
+.container-hof {
+  padding: 1rem 1rem 0 1rem;
+  border-radius: 5px;
+}
+.message {
+  text-align: center;
+}
+.leaderboard {
+  list-style-type: none;
+  padding: 0 20px;
+}
+.leaderboard li {
+  display: flex;
+}
+.leaderboard li p {
+  width: 33.33333333333%;
+  text-align: center;
+}
+.bold {
+  font-weight: 700;
+}
