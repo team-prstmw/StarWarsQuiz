@@ -1,3 +1,7 @@
+:root {
+  --quiz360-border-width: 2px;
+}
+
 .quiz-container {
   align-self: start;
   background-color: rgba(0, 0, 0, 0.2);
@@ -6,8 +10,10 @@
   backdrop-filter: blur(1px);
   grid-area: content;
   margin-top: 6rem;
-  outline: rgba(255, 255, 255, 0.2) solid 4px;
-  width: 800px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  outline: var(--primary-border-color) solid 3px;
+  width: auto;
   flex-wrap: wrap;
   justify-content: center;
   height: fit-content;
@@ -16,10 +22,15 @@
 .answer-container {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 2rem 0;
+  margin: 1rem 0 2rem 0;
   justify-content: center;
   width: 600px;
   height: fit-content;
+}
+
+@media only screen and (max-width: 1400px) {
+}
+@media only screen and (max-width: 768px) {
 }
 
 @media only screen and (max-width: 360px) {
@@ -29,20 +40,15 @@
     justify-content: center;
     align-items: center;
     margin: 2rem;
-    width: auto;
     min-width: fit-content;
+    outline-width: var(--quiz360-border-width);
   }
   .answer-container {
+    margin-top: 0;
     display: flex;
     justify-content: center;
     width: auto;
     height: fit-content;
     margin-bottom: 0.75rem;
   }
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-@media only screen and (max-width: 1400px) {
 }

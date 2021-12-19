@@ -8,22 +8,24 @@
   font-size: 24px;
   font-weight: bold;
   height: 80px;
-  justify-content: center;
   margin: 0.5rem;
   width: 250px;
-  border: rgba(0, 0, 0, 0.9) solid 3px;
+  border: black solid 2px;
+  text-align: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1400px) {
+}
+@media only screen and (max-width: 768px) {
 }
 
 @media only screen and (max-width: 360px) {
   .quiz-answer {
+    border-width: var(--quiz360-border-width);
     font-size: 16px;
     height: 2.2rem;
-    max-width: 10em;
+    width: 10rem;
+    padding: 1.2rem 0;
   }
-}
-
-@media only screen and (max-width: 768px) {
-}
-
-@media only screen and (max-width: 1400px) {
 }
