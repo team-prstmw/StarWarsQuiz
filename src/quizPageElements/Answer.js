@@ -1,13 +1,8 @@
+import HtmlElement from '../components/htmlElement/HtmlElement';
 import './answer.css';
 
-export default class Answer {
+export default class Answer extends HtmlElement {
   constructor(text) {
-    this.div = document.createElement('div');
-    this.div.innerHTML = text;
-    this.div.className = 'quiz-answer';
-  }
-
-  render() {
-    return this.div;
+    super(['quiz-answer'], 'div', text);
   }
 }

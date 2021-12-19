@@ -1,13 +1,8 @@
 import './question.css';
+import HtmlElement from '../components/htmlElement/HtmlElement';
 
-export default class Question {
+export default class Question extends HtmlElement {
   constructor(questionText) {
-    this.div = document.createElement('div');
-    this.div.innerHTML = `${questionText}`;
-    this.div.className = 'question-text';
-  }
-
-  render() {
-    return this.div;
+    super(['question-text'], 'div', questionText);
   }
 }

@@ -15,12 +15,6 @@
   width: 400px;
 }
 
-@media only screen and (max-width: 1400px) {
-}
-
-@media only screen and (max-width: 768px) {
-}
-
 @media only screen and (max-width: 360px) {
   .question-text {
     outline-width: var(--quiz360-border-width);

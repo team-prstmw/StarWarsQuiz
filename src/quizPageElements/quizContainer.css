@@ -29,16 +29,10 @@
   height: fit-content;
 }
 
-@media only screen and (max-width: 1400px) {
-}
-@media only screen and (max-width: 768px) {
-}
-
 @media only screen and (max-width: 360px) {
   .quiz-container {
     margin-top: 4rem;
     box-sizing: border-box;
-    justify-content: center;
     align-items: center;
     margin: 2rem;
     min-width: fit-content;
@@ -46,8 +40,6 @@
   }
   .answer-container {
     margin-top: 0;
-    display: flex;
-    justify-content: center;
     width: auto;
     height: fit-content;
     margin-bottom: 0.75rem;
