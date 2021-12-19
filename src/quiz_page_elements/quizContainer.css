@@ -21,3 +21,28 @@
   width: 600px;
   height: fit-content;
 }
+
+@media only screen and (max-width: 360px) {
+  .quiz-container {
+    margin-top: 4rem;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+    width: auto;
+    min-width: fit-content;
+  }
+  .answer-container {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: fit-content;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 1400px) {
+}
