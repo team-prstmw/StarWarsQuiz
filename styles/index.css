@@ -8,7 +8,7 @@
 body {
   background-color: var(--main-bg-color);
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .main-bg-image {
@@ -37,8 +37,8 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content '
-    'content-button buttons';
+    'content content ';
+  /* 'content-button buttons'; */
 }
 
 .sw-logo {
