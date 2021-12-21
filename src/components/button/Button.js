@@ -28,7 +28,9 @@ class Button extends HtmlElement {
     if (this.buttonType === 'ptg') {
       btn.classList.add('ptg');
     }
-
+    if (this.buttonType === 'error-page__button') {
+      btn.classList.add('error-page__button');
+    }
     if (this.width === 'auto') {
       btn.style.width = 'auto';
     }
