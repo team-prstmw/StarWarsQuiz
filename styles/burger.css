@@ -1,0 +1,105 @@
+/* Burger menu*/
+
+@media screen and (max-width: 992px) {
+  .burger {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.3s;
+  }
+
+  #main-grid-container {
+    display: block;
+  }
+
+  .sw-logo {
+    margin: 2em auto 3em auto;
+  }
+  .quiz-main-menu {
+    position: fixed;
+    width: 350px;
+    max-width: 90%;
+    height: 100vh;
+    max-height: 100vh;
+    top: 0;
+    box-sizing: border-box;
+    left: -350px;
+    margin: 0;
+    border-radius: unset;
+    border: none;
+    border-right: solid var(--starwars-yellow) 0.2rem;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    transition: transform 0.3s;
+  }
+
+  .active {
+    transform: translateX(350px);
+    transition: transform 0.3s;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .burger {
+    padding: 5px 10px;
+    font-size: 20px;
+  }
+
+  .quiz-main-menu {
+    width: 170px;
+    left: -170px;
+    border-right: solid var(--starwars-yellow) 0.15rem;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .active {
+    transform: translateX(170px);
+  }
+  .btn:hover {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 768px) {
+  .burger {
+    padding: 10px 20px;
+    font-size: 26px;
+  }
+
+  .quiz-main-menu {
+    width: 260px;
+    left: -260px;
+    border-right: solid var(--starwars-yellow) 0.15rem;
+  }
+
+  .btn {
+    font-size: 22px;
+  }
+
+  .active {
+    transform: translateX(260px);
+  }
+  .btn:hover {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 993px) {
+  .burger {
+    display: none;
+  }
+}

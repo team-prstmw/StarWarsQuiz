@@ -10,11 +10,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3710696c33.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/burger.css" />
 </head>
 
 <body>
   <div id="#app" class='main-bg-image'>
+    <button class="burger">
+      <i class="fas fa-bars"></i>
+      <i class="fas fa-times hide"></i>
+    </button>
     <div id="main-grid-container">
       <div class="sw-logo"></div>
       <nav class="quiz-main-menu">
@@ -25,6 +31,7 @@
     </div>
   </div>
   <script type="module" src="./src/main.js"></script>
+  <script src="./src/utils/menuBurger.js"></script>
 </body>
 
 </html>
