@@ -20,6 +20,15 @@
   position: relative;
 }
 
+.vanilla {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  color: #ccc;
+}
+
 .hof {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -40,6 +49,11 @@
 
 .button:hover {
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+}
+
+.vanilla:hover {
+  box-shadow: none;
+  color: #ddd;
 }
 
 .ptg:hover {
