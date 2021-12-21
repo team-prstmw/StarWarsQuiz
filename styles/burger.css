@@ -98,7 +98,7 @@
   }
 }
 
-@media (min-width: 993px) {
+@media (min-width: 992px) {
   .burger {
     display: none;
   }
