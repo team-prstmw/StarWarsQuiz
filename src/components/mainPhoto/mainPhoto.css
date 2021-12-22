@@ -1,0 +1,10 @@
+.main-photo {
+  grid-area: content;
+  justify-self: start;
+  align-self: start;
+  margin-left: 4vw;
+  margin-top: 4rem;
+  margin-right: 1.5vw;
+  width: 29vw;
+  height: auto;
+}

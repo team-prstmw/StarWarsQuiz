@@ -1,4 +1,5 @@
 import HtmlElement from '../htmlElement/HtmlElement';
+import './mainPhoto.css';
 
 export default class MainPhoto extends HtmlElement {
   constructor(id = 'main-photo') {

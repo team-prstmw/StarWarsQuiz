@@ -9,8 +9,9 @@ const buttonsContainer = new ButtonsContainer();
 
 const mainPhoto = new MainPhoto();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
+
+document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 
 document.addListenerToButtons = addListenerToButtons(
   ['.btn-characters', '.btn-vehicles', '.btn-starships'],

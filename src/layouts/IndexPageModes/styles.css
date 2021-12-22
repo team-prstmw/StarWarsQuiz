@@ -1,5 +1,9 @@
 .index-page__container {
   grid-area: content;
-  margin: 4.5rem 5vw;
-  align-self: start;    
+  margin-top: 4rem;
+  margin-right: 4vw;
+  margin-left: 1.5vw;
+  align-self: start;
+  justify-self: end;
+  width: 60vw;
 }
