@@ -13,10 +13,6 @@ body {
   /* overflow: hidden; */
 }
 
-.content-container {
-  background: white;
-}
-
 .main-bg-image {
   display: flex;
   justify-content: center;
