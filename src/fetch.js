@@ -1,6 +1,6 @@
-export default fetchStarWarsData = async (type) => {
+const fetchStarWarsData = async (type, id = '') => {
   try {
-    const response = await fetch("https://swapi.dev/api/" + type);
+    const response = await fetch(`https://swapi.dev/api/${type}/${id}`);
 
     if (response.status !== 200) {
       throw new Error("can't fetch the data");
@@ -10,6 +10,8 @@ export default fetchStarWarsData = async (type) => {
 
     return data;
   } catch (e) {
-    console.log("Error", e);
+    console.log('Error', e);
   }
 };
+
+export default fetchStarWarsData;
