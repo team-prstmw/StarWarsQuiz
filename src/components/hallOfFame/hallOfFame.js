@@ -19,16 +19,16 @@ export default class HallOfFame {
     const HeaderContainerElement = new Container(['main__subheader-container'], 'div');
     const HeaderContainerElementRendered = HeaderContainerElement.render();
 
-    const graduationCapImage = document.createElement('img');
-    graduationCapImage.src = '/school_24px.svg';
+    const hofImg = document.createElement('img');
+    hofImg.src = '/hall_of_fame.svg';
 
-    HeaderContainerElementRendered.appendChild(graduationCapImage);
+    HeaderContainerElementRendered.appendChild(hofImg);
     HeaderContainerElementRendered.appendChild(headerElement2.render());
 
     container.appendChild(HeaderContainerElementRendered);
 
     if (this.leaderBoardMode === undefined) {
-      const message = new HtmlElement(['message'], 'p', 'Leaderboard empty.').render();
+      const message = new HtmlElement(['message'], 'p', 'Leaderboard is empty.').render();
       container.appendChild(message);
       return container;
     }

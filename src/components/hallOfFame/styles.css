@@ -1,6 +1,10 @@
 .container-hof {
   padding: 1rem 1rem 0 1rem;
   border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.main__subheader-container img {
+  height: 50px;
 }
 .message {
   text-align: center;
@@ -13,7 +17,7 @@
   display: flex;
 }
 .leaderboard li p {
-  width: 33.33333333333%;
+  width: calc(100% / 3);
   text-align: center;
 }
 .bold {
