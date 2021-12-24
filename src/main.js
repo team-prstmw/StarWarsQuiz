@@ -1,6 +1,7 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
 import { addListenerToButtons } from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
+import playBackgroundMusic from './utils/playBackgroundMusic';
 
 const indexPage = new IndexPageModes();
 
@@ -17,3 +18,5 @@ document.addListenerToButtons = addListenerToButtons(
     'what starship from Star Wars is showed in the picture.',
   ]
 );
+
+window.onload = playBackgroundMusic('/audio/galacticIntro.wav');
