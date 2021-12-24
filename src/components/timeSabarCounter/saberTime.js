@@ -53,7 +53,7 @@ class Time {
   }
 
   loadingBar() {
-    const bar = document.querySelector('.saber');
+    const bar = document.querySelector('.sabre');
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
   }
