@@ -5,6 +5,7 @@ const nav = document.querySelector('nav');
 
 const handleNav = () => {
   nav.classList.toggle('active');
+  nav.classList.toggle('shadow');
   burgerBtn.classList.toggle('active');
   barsIco.classList.toggle('hide');
   xIco.classList.toggle('hide');
