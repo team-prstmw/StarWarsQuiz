@@ -19,4 +19,4 @@ document.addListenerToButtons = addListenerToButtons(
   ]
 );
 
-window.onload = playBackgroundMusic('/audio/galacticIntro.wav');
+window.onload = playBackgroundMusic('/audio/galacticIntro.mp3');
