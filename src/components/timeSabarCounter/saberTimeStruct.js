@@ -2,10 +2,7 @@ import './saberTime.css';
 
 function createHTML() {
   const divOuter = document.createElement('div');
-  divOuter.id = 'lightSabreProgresBar';
-
-  const sabreContainer = document.createElement('div');
-  sabreContainer.classList = 'sabreCont';
+  divOuter.id = 'lightSaberProgresBar';
 
   const image = document.createElement('img');
   image.src = 'images/sabre.png';
@@ -14,28 +11,26 @@ function createHTML() {
   const divProgresBar = document.createElement('div');
   divProgresBar.classList = 'progresBar';
 
-  const divSabre = document.createElement('div');
-  divSabre.classList = 'sabre';
+  const divSaber = document.createElement('div');
+  divSaber.classList = 'saber';
 
   const divTimer = document.createElement('div');
   divTimer.classList = 'timer';
-  divTimer.innerHTML = 'Time Left:';
+  divTimer.innerHTML = 'Time Left: ';
 
   const spanTime = document.createElement('span');
   spanTime.classList = 'time';
 
   document.body.appendChild(divOuter);
 
-  sabreContainer.appendChild(image);
-  sabreContainer.appendChild(divProgresBar);
-  divOuter.appendChild(sabreContainer);
+  divOuter.appendChild(image);
+  divOuter.appendChild(divProgresBar);
   divOuter.appendChild(divTimer);
 
-  divProgresBar.appendChild(divSabre);
+  divProgresBar.appendChild(divSaber);
   divTimer.appendChild(spanTime);
 
-  // Dodane na czas testow, pozniej jak wleci w docelowe miejsce bedzie inaczej.
-  document.getElementById('main-grid-container').appendChild(divOuter);
+  return divOuter;
 }
 
 export default createHTML;
