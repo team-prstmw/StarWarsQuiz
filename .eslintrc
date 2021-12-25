@@ -11,6 +11,7 @@
   },
   "rules": {
     "import/no-named-as-default": 0,
+    "allowForLoopAfterthoughts": true,
     "prettier/prettier": [
       "error",
       {
