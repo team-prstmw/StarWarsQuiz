@@ -14,7 +14,7 @@ export class HtmlElement {
       });
     }
 
-    if (this.label) htmlElement.innerText = this.label;
+    if (this.label) htmlElement.innerHTML = this.label;
 
     return htmlElement;
   }
