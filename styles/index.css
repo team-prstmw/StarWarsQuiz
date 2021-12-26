@@ -10,7 +10,7 @@
 body {
   background-color: var(--main-bg-color);
   margin: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
   cursor: url('/lightsaberPointer.cur'), auto;
 }
 
