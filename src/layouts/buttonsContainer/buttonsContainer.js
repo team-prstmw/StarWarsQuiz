@@ -30,7 +30,7 @@ class ButtonsContainer {
     const hallOfFameImage = document.createElement('img');
     hallOfFameImage.src = '/hall_of_fame.svg';
     ButtonLeftRendered.appendChild(hallOfFameImage);
-    ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false));
+    ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false), { once: true });
 
     // this.container.appendChild(ButtonSettingsRendered);
     this.container.appendChild(ButtonLeftRendered);
