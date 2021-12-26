@@ -17,8 +17,8 @@
   background-color: black;
   z-index: 1;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   opacity: 0.8;
@@ -106,50 +106,36 @@
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
 }
 
-@media only screen and (min-width: 360px) {
-}
-
 @media only screen and (min-width: 768px) {
   .modal-container__game-over-modal {
-    position: absolute;
     max-height: 100%;
-    top: 50vh;
+    top: 56vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     margin: 1rem;
   }
 
   .modal-container__header {
-    margin: 2rem auto;
     font-size: 5rem;
   }
 
   .modal-container__summary {
     max-width: 60%;
-    margin: 0 auto;
     font-size: 1.2rem;
-    letter-spacing: 1px;
   }
 
   .modal-container__input-container {
     flex-direction: row;
     width: 90%;
-    margin: 0 auto;
   }
 
   .modal-container__input-container input {
     width: 300px;
-    height: 2.5rem;
-    line-height: 2rem;
-    font-size: 2rem;
-    border: 3px solid #ccc;
-    padding: 0.5rem 1rem;
   }
 
   .modal-container__input-description {
     max-width: 50%;
     font-size: 0.8rem;
-    letter-spacing: 1px;
     margin-left: 25px;
     text-align: left;
   }
@@ -162,7 +148,6 @@
     margin-left: 1rem;
   }
   .modal-container__main {
-    display: flex;
     flex-direction: row;
     position: relative;
     min-height: 300px;
@@ -178,22 +163,7 @@
 }
 
 @media only screen and (min-width: 1400px) {
-  .modal-container__yoda-image {
-    position: absolute;
-    top: 4rem;
-    max-width: 200px;
-    margin-left: 1rem;
-  }
-  .modal-container__main {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    min-height: 300px;
-  }
   .modal-container__input-description {
-    max-width: 50%;
     font-size: 1rem;
-    letter-spacing: 1px;
-    margin-left: 25px;
   }
 }
