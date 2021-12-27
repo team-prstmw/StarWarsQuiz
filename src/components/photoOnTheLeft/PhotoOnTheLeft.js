@@ -6,7 +6,8 @@ class MainPhoto extends HtmlElement {
   constructor() {
     super(['photo-on-the-left'], 'img', 'Picture should be here', {
       id: 'photo-on-the-left',
-      src: getRandomImgSrc(),
+      src: getRandomImgSrc().then((data) => data.src),
+      category: getRandomImgSrc().then((data) => data.category),
     });
   }
 }

@@ -2,16 +2,18 @@ import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
 import { addListenerToButtons } from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import MainPhoto from './components/photoOnTheLeft/PhotoOnTheLeft';
+import textRelatedtoPhotoCategory from './components/photoOnTheLeft/textRelatedToPhotoCategory';
 
 const indexPage = new IndexPageModes();
 
 const buttonsContainer = new ButtonsContainer();
 
 const mainPhoto = new MainPhoto();
-
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
+
+document.querySelector('h2.main__header').innerHTML = textRelatedtoPhotoCategory.mainPhoto.category;
 
 document.addListenerToButtons = addListenerToButtons(
   ['.btn-characters', '.btn-vehicles', '.btn-starships'],
