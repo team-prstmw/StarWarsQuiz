@@ -1,28 +1,35 @@
 import fetchStarWarsData from '../../fetch';
 
 const PHOTO_CATEGORIES = ['starships', 'vehicles', 'people'];
-
 const randomCategory = PHOTO_CATEGORIES[Math.floor(Math.random() * PHOTO_CATEGORIES.length)];
 
-const item = fetchStarWarsData(randomCategory, '').then((data) => {
-  for (let i = 0; i < data.count; i++) console.log(data.results[i]);
-  return data;
-});
-
-const printItem = () => {
-  item.then((a) => {
-    console.log(a);
-  });
+const fetchURLFromArray = async (source, index) => {
+  const response = await fetch(source);
+  const data = await response.json();
+  return data.results[index].url;
 };
 
-printItem();
+function getUrlPattern(data) {
+  const randomArrayIndex = Math.floor(Math.random() * data.count).toString();
+  const indexToFetch = parseInt(randomArrayIndex.slice(-1), 10);
+  const pageNr = randomArrayIndex.length > 1 ? parseInt(randomArrayIndex.slice(0, -1), 10) + 1 : 1;
+  const source = `https://swapi.dev/api/${data.category}/?page=${pageNr}`;
+  return fetchURLFromArray(source, indexToFetch);
+}
 
-// const randomId = Math.floor(Math.random() * 20);
+function getLinkToImage(url) {
+  const urlSuffix = url.replace('https://swapi.dev/api/', '').slice(0, -1);
+  const imgScr = `https://raw.githubusercontent.com/nowakprojects/CodersCamp2020.Project.JavaScript.StarWarsQuiz/develop/static/assets/img/modes/${urlSuffix}.jpg`;
+  return imgScr;
+}
 
-const getRandomModeAndId = () => {
-  return `${PHOTO_CATEGORIES[Math.floor(Math.random() * PHOTO_CATEGORIES.length)]}/${randomId}`;
+const getRandomImgSrc = () => {
+  return fetchStarWarsData(randomCategory)
+    .then((data) => getUrlPattern(data))
+    .then((url) => getLinkToImage(url))
+    .then((imgScr) => {
+      return imgScr;
+    });
 };
 
-export default getRandomModeAndId;
-
-// export default data;
+export default getRandomImgSrc;
