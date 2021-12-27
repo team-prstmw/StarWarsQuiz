@@ -20,14 +20,14 @@
   position: relative;
 }
 
-.hof {
+.left {
   display: inline-flex;
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
 }
 
-.hof img {
+.left img {
   width: 24px;
   height: 24px;
   margin: auto 10px auto 0;
