@@ -73,7 +73,7 @@ class GameOverModal {
     modalHeader.innerText = 'game over';
     modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${this.playerAnsweredCount} questions. And computer guessed ${this.pcAnsweredCount}.`;
     modalInputDescription.innerText = 'Please, fill your name in order to receive eternal glory in whole Galaxy!';
-    yodaImage.src = '../../images/Yoda.png';
+    yodaImage.src = '/images/Yoda.png';
     modalAnswers.innerText = 'placeholder';
 
     modalInput.onchange = (e) => {
