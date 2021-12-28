@@ -1,0 +1,41 @@
+.answer-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.answer-image-container {
+  height: 6rem;
+  width: 3rem;
+}
+
+.answer-image {
+  position: relative;
+  min-height: 5rem;
+  max-width: 4rem;
+  height: auto;
+  width: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+  object-fit: cover;
+}
+
+.answer-image:hover {
+  object-fit: inherit;
+  position: absolute;
+  min-width: 15rem;
+  transform: translate(0, -50%);
+}
+
+.answer {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.answer-incorrect {
+  color: red;
+}
+
+.answer-correct {
+  color: green;
+}

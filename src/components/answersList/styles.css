@@ -1,0 +1,14 @@
+.answers-list-container {
+  max-width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin-left: auto;
+}
+
+.answers-list-container div {
+  padding: 0;
+}
