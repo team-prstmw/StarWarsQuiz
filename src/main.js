@@ -1,5 +1,4 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
-import { addListenerToButtons } from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import MainPhoto from './components/photoOnTheLeft/PhotoOnTheLeft';
 import textRelatedtoPhotoCategory from './components/photoOnTheLeft/textRelatedToPhotoCategory';
@@ -33,3 +32,19 @@ document.addListenerToButtons = addListenerToButtons(
     'what starship from Star Wars is showed in the picture.',
   ]
 );
+document.MODES = {
+  characters: {
+    header: 'Who is this character?',
+    description: 'Who from Star Wars is showed on the left (Jar Jar Binks right now) from available options.',
+  },
+  vehicles: {
+    header: 'What kind of vehicle is this?',
+    description: 'what vehicle from Star Wars is showed in the picture.',
+  },
+  starships: {
+    header: 'What kind of starship is this?',
+    description: 'what starship from Star Wars is showed in the picture.',
+  },
+};
+document.mode = 'characters';
+document.querySelector('.quiz-main-menu').addEventListener('click', changeGameMode);
