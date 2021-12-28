@@ -1,15 +1,17 @@
-
-.container{
-    min-width: 100%;
-    gap: 10px;
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 0;
-    flex-direction: column-reverse;
+.container {
+  min-width: 100%;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  flex-direction: column-reverse;
+}
+.button img {
+  margin-left: 10px;
 }
 
 @media only screen and (min-width: 768px) {
-    .container{
-        flex-direction: row;
-    }
-    }
+  .container {
+    flex-direction: row;
+  }
+}

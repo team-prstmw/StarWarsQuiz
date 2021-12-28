@@ -1,4 +1,5 @@
 import Button from '../../components/button/Button';
+import changeModeDetail from '../../utils/changeModeDetail';
 import './styles.css';
 
 class ButtonsContainer {
@@ -11,9 +12,9 @@ class ButtonsContainer {
     this.container.className = 'container';
 
     // const ButtonSettings = new Button({ label: 'Settings', type: 'default', width: 'full' });
-    const buttonHof = new Button({
+    const buttonLeft = new Button({
       label: 'Hall of fame',
-      buttonType: 'hof',
+      buttonType: 'left',
       width: 'half',
     });
     const buttonPtg = new Button({
@@ -23,15 +24,16 @@ class ButtonsContainer {
     });
 
     // const ButtonSettingsRendered = ButtonSettings.render();
-    const ButtonHofRendered = buttonHof.render();
+    const ButtonLeftRendered = buttonLeft.render();
     const ButtonPtgRendered = buttonPtg.render();
 
     const hallOfFameImage = document.createElement('img');
     hallOfFameImage.src = '/hall_of_fame.svg';
-    ButtonHofRendered.appendChild(hallOfFameImage);
+    ButtonLeftRendered.appendChild(hallOfFameImage);
+    ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false), { once: true });
 
     // this.container.appendChild(ButtonSettingsRendered);
-    this.container.appendChild(ButtonHofRendered);
+    this.container.appendChild(ButtonLeftRendered);
     this.container.appendChild(ButtonPtgRendered);
 
     return this.container;
