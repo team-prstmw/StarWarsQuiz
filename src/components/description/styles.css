@@ -8,7 +8,7 @@
 }
 
 .slider__description {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--intro-font-family);
   font-size: 2rem;
   color: #ffe81f;
 }

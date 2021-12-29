@@ -31,7 +31,7 @@
   margin-bottom: 0;
   transform: translate(-50%, -50%);
   color: rgb(75, 213, 238);
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: var(--intro-font-family);
   font-weight: 500;
   font-size: 2rem;
   opacity: 0;
