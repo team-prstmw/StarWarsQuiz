@@ -10,7 +10,8 @@ const fetchURLFromArray = async (source, index, category) => {
 };
 
 function getUrlPattern(data) {
-  const randomArrayIndex = Math.floor(Math.random() * data.count).toString();
+  const objectsCountInCategory = data.category === 'people' ? data.count : 20;
+  const randomArrayIndex = Math.floor(Math.random() * objectsCountInCategory).toString();
   const indexToFetch = parseInt(randomArrayIndex.slice(-1), 10);
   const pageNr = randomArrayIndex.length > 1 ? parseInt(randomArrayIndex.slice(0, -1), 10) + 1 : 1;
   const source = `https://swapi.dev/api/${data.category}/?page=${pageNr}`;
