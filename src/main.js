@@ -41,7 +41,7 @@ document.addEventListener(
 document.MODES = {
   characters: {
     header: 'Who is this character?',
-    description: 'Who from Star Wars is showed on the left (Jar Jar Binks right now) from available options.',
+    description: 'who from Star Wars is showed on the left (Jar Jar Binks right now) from available options.',
   },
   vehicles: {
     header: 'What kind of vehicle is this?',
