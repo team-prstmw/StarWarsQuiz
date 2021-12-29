@@ -5,17 +5,21 @@ import redirectToTheHomepage from '../../utils/redirectToTheHomepage';
 
 class ErrorPage {
   render() {
-    const container = document.createElement('section');
+    const container = new Container(['index-page__container'], 'section');
+    const containerRendered = container.render();
+    // const container = document.createElement('section');
 
-    container.innerHTML = '';
-    container.classList.add('index-page__container');
+    // container.innerHTML = '';
+    // container.classList.add('index-page__container');
 
+    // const yodaImage = new Image(['yoda-image'], 'img', '../../images/yoda');
     const yodaImage = document.createElement('img');
-    yodaImage.src = '../../images/yoda.svg';
+    yodaImage.src = '/images/yoda.svg';
     yodaImage.style.fill = 'white';
     yodaImage.style.width = '200px';
+    // const yodaImageRendered = yodaImage.render();
 
-    const containerElement1 = new Container(['error-page__container'], 'div');
+    const containerElement = new Container(['error-page__container'], 'div');
     const headerElement1 = new Header('occurred a 404 error has.', ['error-page__header'], 'h1');
 
     const headerElement2 = new Header('How embarrassing...', ['error-page__subheader'], 'h2');
@@ -26,16 +30,16 @@ class ErrorPage {
       onClick: redirectToTheHomepage,
     });
 
-    const containerElement1Rendered = containerElement1.render();
+    const containerElementRendered = containerElement.render();
 
-    containerElement1Rendered.appendChild(yodaImage);
-    containerElement1Rendered.appendChild(headerElement1.render());
-    containerElement1Rendered.appendChild(headerElement2.render());
-    containerElement1Rendered.appendChild(button.render());
+    containerElementRendered.appendChild(yodaImage);
+    containerElementRendered.appendChild(headerElement1.render());
+    containerElementRendered.appendChild(headerElement2.render());
+    containerElementRendered.appendChild(button.render());
 
-    container.appendChild(containerElement1Rendered);
+    containerRendered.appendChild(containerElementRendered);
 
-    return container;
+    return containerRendered;
   }
 }
 
