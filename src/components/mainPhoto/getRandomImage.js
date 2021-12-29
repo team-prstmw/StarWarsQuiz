@@ -10,11 +10,11 @@ const fetchURLFromArray = async (source, index, category) => {
 };
 
 function getUrlPattern(data) {
-  const objectsCountInCategory = data.category === 'people' ? data.count : 20;
-  const randomArrayIndex = Math.floor(Math.random() * objectsCountInCategory).toString();
+  const randomArrayIndex = Math.floor(Math.random() * data.count).toString();
   const indexToFetch = parseInt(randomArrayIndex.slice(-1), 10);
   const pageNr = randomArrayIndex.length > 1 ? parseInt(randomArrayIndex.slice(0, -1), 10) + 1 : 1;
-  const source = `https://swapi.dev/api/${data.category}/?page=${pageNr}`;
+  let source = `https://swapi.dev/api/${data.category}/?page=${pageNr}`
+  
   return fetchURLFromArray(source, indexToFetch, data.category);
 }
 
@@ -30,8 +30,7 @@ const getRandomImgSrc = () => {
   return fetchStarWarsData(randomCategory)
     .then((data) => getUrlPattern(data))
     .then((urlCategory) => getLinkToImage(urlCategory))
-    .then((imgScr) => {
-      return imgScr;
+    .then((imgScr) => {return imgScr;
     });
 };
 

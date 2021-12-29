@@ -39,7 +39,7 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content ';
+    'image content ';
   /* 'content-button buttons'; */
 }
 
@@ -102,7 +102,7 @@ button {
   box-shadow: 1px 1px 100px white;
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
   #main-grid-container {
     display: block;
   }
