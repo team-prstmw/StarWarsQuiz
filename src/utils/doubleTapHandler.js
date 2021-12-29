@@ -2,7 +2,7 @@ import { hideStarWarsIntro } from './hideStarWarsIntro';
 
 let tapedTwice = false;
 
-function tapHandler(event) {
+export function tapHandler(event) {
   if (!tapedTwice) {
     tapedTwice = true;
     setTimeout(() => {
