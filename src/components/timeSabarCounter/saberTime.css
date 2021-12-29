@@ -1,39 +1,152 @@
-#lightSaberProgresBar {
-  position: relative;
+#lightSabreProgresBar {
+  width: 90%;
+  grid-area: content;
+  margin: 0 auto;
 }
 
-#lightSaberProgresBar img {
-  width: 315px;
+.sabreCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightSabreProgresBar img {
   transform: rotate(90deg);
 }
 
-#lightSaberProgresBar .progresBar {
-  width: 1480px;
-  height: 26px;
-  border-radius: 8px;
+#lightSabreProgresBar .progresBar {
+  position: relative;
+  flex-basis: 100%;
   background-color: hsl(0, 0%, 74%);
-  position: absolute;
-  top: 144px;
-  left: 282px;
 }
 
-#lightSaberProgresBar .saber {
+#lightSabreProgresBar .sabre {
   width: 100%;
-  height: 26px;
-  border-radius: 8px;
   background-color: #fff;
   outline-offset: 10px;
   box-shadow: 10px 5px 15px #ff0000, inset 0px 5px 4px rgba(255, 0, 0, 0.25), 10px -5px 15px #ff0000;
 }
 
-#lightSaberProgresBar .timer {
-  position: absolute;
-  top: 193px;
-  left: 687px;
+#lightSabreProgresBar .timer {
+  display: flex;
+  justify-content: center;
+  position: relative;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 42px;
-  line-height: 51.2px;
   color: #f00;
   opacity: 0.8;
+}
+
+@media screen and (min-width: 360px) {
+  #lightSabreProgresBar img {
+    height: 115px;
+  }
+
+  #lightSabreProgresBar .progresBar {
+    left: -12px;
+    height: 11px;
+    border-radius: 3px;
+  }
+
+  #lightSabreProgresBar .sabre {
+    height: 11px;
+    border-radius: 3px;
+  }
+
+  #lightSabreProgresBar .timer {
+    font-size: 20px;
+    line-height: 0px;
+    top: -20px;
+  }
+
+  #lightSabreProgresBar .timer .time {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #lightSabreProgresBar img {
+    height: 160px;
+  }
+
+  #lightSabreProgresBar .progresBar {
+    left: -17px;
+    height: 16px;
+    border-radius: 5px;
+  }
+
+  #lightSabreProgresBar .sabre {
+    height: 16px;
+    border-radius: 5px;
+  }
+
+  #lightSabreProgresBar .timer {
+    font-size: 25px;
+    top: -15px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #lightSabreProgresBar img {
+    height: 200px;
+  }
+
+  #lightSabreProgresBar .progresBar {
+    left: -22px;
+    height: 19px;
+    border-radius: 6px;
+  }
+
+  #lightSabreProgresBar .sabre {
+    height: 19px;
+    border-radius: 7px;
+  }
+
+  #lightSabreProgresBar .timer {
+    font-size: 32px;
+    top: -10px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #lightSabreProgresBar img {
+    height: 280px;
+  }
+
+  #lightSabreProgresBar .progresBar {
+    left: -31px;
+    height: 25px;
+    border-radius: 8px;
+  }
+
+  #lightSabreProgresBar .sabre {
+    height: 25px;
+    border-radius: 8px;
+  }
+
+  #lightSabreProgresBar .timer {
+    font-size: 37px;
+  }
+  #lightSabreProgresBar .timer .time {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  #lightSabreProgresBar img {
+    height: 315px;
+  }
+
+  #lightSabreProgresBar .progresBar {
+    left: -36px;
+    height: 26px;
+  }
+
+  #lightSabreProgresBar .sabre {
+    height: 26px;
+  }
+
+  #lightSabreProgresBar .timer {
+    font-size: 42px;
+  }
 }
