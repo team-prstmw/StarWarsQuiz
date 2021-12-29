@@ -6,9 +6,11 @@ export class Description extends HtmlElement {
     super(
       classList,
       htmlTag,
-      `You have one minute (1m) to answer as many questions as possible. During the game on each question you need to select ${label}`
+      label
     );
   }
 }
 
 export default Description;
+
+// `You have one minute (1m) to answer as many questions as possible. During the game on each question you need to select ${label}`
