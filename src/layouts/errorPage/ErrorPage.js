@@ -5,7 +5,7 @@ import redirectToTheHomepage from '../../utils/redirectToTheHomepage';
 
 class ErrorPage {
   render() {
-    const container = new Container(['index-page__container'], 'section');
+    const container = new Container(['error-page__wrapper'], 'section');
     const containerRendered = container.render();
     // const container = document.createElement('section');
 

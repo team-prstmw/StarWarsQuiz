@@ -22,7 +22,7 @@
   padding-top: 1rem;
 }
 
-.error-page__container{
+.error-page__container {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
@@ -32,16 +32,17 @@
   width: 100vw;
   height: 100vh;
   background-color: black;
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 320px) and (orientation: landscape){
-  .error-page__container{
+@media screen and (min-width: 320px) and (orientation: landscape) {
+  .error-page__container {
     height: auto;
     padding: 1rem 0;
   }
 }
-@media screen and (min-width: 992px) and (orientation: landscape){
-  .error-page__container{
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .error-page__container {
     height: 100vh;
   }
 }
