@@ -1,18 +1,26 @@
 .answer-container {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
+  height: 5rem;
 }
 
-.answer-image-container {
-  height: 6rem;
-  width: 3rem;
+.answer-image-td {
+  padding-left: 0.5rem;
+  width: 100%;
+  min-width: 4rem;
+  position: relative;
+}
+
+.user-answer-td {
+  min-width: 100px;
+}
+
+.correct-answer-td {
+  min-width: 100px;
 }
 
 .answer-image {
-  position: relative;
-  min-height: 5rem;
-  max-width: 4rem;
+  min-height: 4rem;
+  max-width: 3rem;
   height: auto;
   width: auto;
   border-radius: 15px;
@@ -23,12 +31,13 @@
 .answer-image:hover {
   object-fit: inherit;
   position: absolute;
-  min-width: 15rem;
+  min-width: 8rem;
   transform: translate(0, -50%);
+  z-index: 3;
 }
 
 .answer {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
@@ -38,4 +47,52 @@
 
 .answer-correct {
   color: green;
+}
+
+@media only screen and (min-width: 360px) {
+  .answer {
+    font-size: 1rem;
+  }
+  .answer-image-td {
+    padding-left: 1.5rem;
+  }
+
+  .user-answer-td {
+    min-width: 25vw;
+    padding-right: 0.5rem;
+  }
+
+  .correct-answer-td {
+    min-width: 25vw;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .user-answer-td {
+    min-width: 150px;
+  }
+
+  .correct-answer-td {
+    min-width: 150px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .user-answer-td {
+    min-width: 190px;
+  }
+
+  .correct-answer-td {
+    min-width: 190px;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .user-answer-td {
+    min-width: 220px;
+  }
+
+  .correct-answer-td {
+    min-width: 220px;
+  }
 }

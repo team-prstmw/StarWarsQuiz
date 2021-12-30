@@ -1,6 +1,6 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
-import GameOverModal from './layouts/GameOverModal/GameOverModal';
+// import GameOverModal from './layouts/GameOverModal/GameOverModal';
 import changeGameMode from './utils/changeGameMode';
 import ErrorPage from './layouts/errorPage/ErrorPage'
 
@@ -11,7 +11,7 @@ const buttonsContainer = new ButtonsContainer();
 
 // const gameOverModal = new GameOverModal();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render())
+document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 // .appendChild(gameOverModal.render());
 // document.body.appendChild(errorPage.render());
 

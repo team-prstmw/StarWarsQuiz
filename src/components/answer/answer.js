@@ -8,16 +8,21 @@ class Answer extends HtmlElement {
   }
 
   render() {
-    const container = document.createElement('div');
-    const imageContainer = document.createElement('div');
+    const tableRow = document.createElement('tr');
+    const imageTd = document.createElement('td');
+    const userAnswerTd = document.createElement('td');
+    const correctAnswerTd = document.createElement('td');
     const image = document.createElement('img');
     const userAnswer = document.createElement('p');
     const correctAnswer = document.createElement('p');
 
-    container.className = 'answer-container';
-    imageContainer.className = 'answer-image-container';
+    tableRow.className = 'answer-container';
+    imageTd.className = 'answer-image-td';
     image.className = 'answer-image';
     userAnswer.classList = ['answer'];
+    userAnswerTd.className = 'user-answer-td';
+    correctAnswerTd.className = 'correct-answer-td';
+    
 
     if (this.answer.userAnswer !== this.answer.correctAnswer) {
       userAnswer.classList.add('answer-incorrect');
@@ -30,19 +35,15 @@ class Answer extends HtmlElement {
     userAnswer.innerText = this.answer.userAnswer;
     correctAnswer.innerText = this.answer.correctAnswer;
 
-    imageContainer.appendChild(image)
-    container.appendChild(imageContainer);
-    container.appendChild(userAnswer);
-    container.appendChild(correctAnswer);
+    imageTd.appendChild(image);
+    userAnswerTd.appendChild(userAnswer);
+    correctAnswerTd.appendChild(correctAnswer);
+    tableRow.appendChild(imageTd);
+    tableRow.appendChild(userAnswerTd);
+    tableRow.appendChild(correctAnswerTd);
 
-    return container;
+    return tableRow;
   }
 }
 
 export default Answer;
-
-// {
-//   image: '',
-//   userAnswer: '',
-//   correctAnswer: ''
-// }

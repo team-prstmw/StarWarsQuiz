@@ -63,7 +63,15 @@
 }
 
 .modal-container__answers {
-  margin: 1rem auto;
+  max-width: 100%;
+  margin-top: 2rem;
+}
+
+.modal-container__answers__header {
+  letter-spacing: 3px;
+  line-height: 1rem;
+  margin: auto;
+  max-width: max-content;
 }
 
 .modal-container__yoda-image {
@@ -117,6 +125,10 @@
     font-size: 5rem;
   }
 
+  .modal-container__answers__header {
+    margin: 1rem;
+  }
+
   .modal-container__summary {
     max-width: 60%;
     font-size: 1.2rem;
@@ -155,13 +167,16 @@
     width: 60%;
   }
   .modal-container__answers {
-    width: 50%;
-    margin: auto 0 auto auto;
+    width: 55%;
+    margin: 2rem 0 auto auto;
   }
 }
 
 @media only screen and (min-width: 1400px) {
   .modal-container__input-description {
     font-size: 1rem;
+  }
+  .modal-container__answers {
+    width: 60%;
   }
 }

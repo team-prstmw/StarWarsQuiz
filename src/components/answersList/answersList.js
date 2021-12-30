@@ -9,29 +9,37 @@ class AnswersList extends HtmlElement {
   }
 
   render() {
-    const container = document.createElement('div');
+const answersListTable = document.createElement('table');
+answersListTable.className = 'answers-list-table';
 
-    container.className = 'answers-list-container';
+const answersListTableHead = document.createElement('thead');
+answersListTableHead.className = 'answers-list-thead';
 
-    const header = document.createElement('div')
-header.className = 'header'
+const answersListTableHeaderRow = document.createElement('tr');
+answersListTableHeaderRow.className = 'answers-header-row';
 
-    const youHeader = document.createElement('h2')
-    const answerHeader = document.createElement('h2')
+const headers = ['', 'You', 'Answer'];
 
-    youHeader.innerText = 'you'
-    answerHeader.innerText = 'answer'
+headers.forEach( header => {
+  const answersHeader = document.createElement('th');
+  answersHeader.className = 'answers-header'
+  answersHeader.innerText = header
+  answersListTableHeaderRow.append(answersHeader);
+})
 
-    header.appendChild(youHeader)
-    header.appendChild(answerHeader)
-    container.appendChild(header)
+answersListTableHead.append(answersListTableHeaderRow)
+answersListTable.append(answersListTableHead)
+
+const answersListTableBody = document.createElement('tbody')
+answersListTableBody.className = 'answers-list-tbody'
+answersListTable.append(answersListTableBody)
 
     this.answers.forEach(({ image, userAnswer, correctAnswer }) => {
       const answer = new Answer({ image, userAnswer, correctAnswer });
 
-      container.appendChild(answer.render());
+      answersListTableBody.appendChild(answer.render());
     });
-    return container;
+    return answersListTable;
   }
 }
 

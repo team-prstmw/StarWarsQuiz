@@ -1,14 +1,36 @@
-.answers-list-container {
-  max-width: 100%;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  margin-left: auto;
+.answers-list-table {
+  display: block;
+  table-layout: fixed;
+  width: 90%;
+  margin: 0 auto 30px auto;
+  height: 15rem;
+  overflow-y: scroll;
+  letter-spacing: 1px;
 }
 
 .answers-list-container div {
   padding: 0;
+}
+
+.answers-header {
+  text-align: left;
+  color: lightgray;
+  width: 100%;
+}
+
+.answers-list-tbody {
+  width: 100%;
+}
+
+.answers-list-thead {
+  width: 100%;
+  position: sticky;
+  background-color: white;
+  top: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .answers-list-table {
+    width: 100%;
+  }
 }
