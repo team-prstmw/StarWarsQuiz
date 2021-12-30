@@ -9,9 +9,10 @@ const errorPage = new ErrorPage();
 
 const buttonsContainer = new ButtonsContainer();
 
-const gameOverModal = new GameOverModal();
+// const gameOverModal = new GameOverModal();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render()).appendChild(gameOverModal.render());
+document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render())
+// .appendChild(gameOverModal.render());
 // document.body.appendChild(errorPage.render());
 
 document.MODES = {
