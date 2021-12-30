@@ -30,10 +30,9 @@ body {
 #main-grid-container {
   height: 100vh;
   flex-grow: 1;
-  max-width: 1440px;
+  max-width: 1600px;
   display: grid;
   align-items: center;
-  overflow-x: scroll;
   justify-items: center;
   row-gap: 10px;
   grid-template-columns: 1fr 5fr;

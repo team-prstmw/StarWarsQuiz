@@ -1,16 +1,17 @@
 .index-page__container {
   grid-area: content;
-  margin-top: 4rem;
+  max-width: 742px;
+  margin-top: 2rem;
   margin-right: 4vw;
   margin-left: 1.5vw;
   align-self: start;
-  justify-self: end;
+  justify-self: center;
   width: 60vw;
 }
 
 @media only screen and (max-width: 768px) {
   .index-page__container {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin: auto;
     width: 80vw;
     margin-bottom: 4rem;
