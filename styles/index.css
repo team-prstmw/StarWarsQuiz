@@ -1,14 +1,17 @@
 :root {
   --main-bg-color: rgb(16, 3, 46);
   --starwars-yellow: rgb(88%, 69%, 0%);
+  --container-bg-color: rgba(0, 0, 0, 0.35);
   --logo-width: 120px;
+  --primary-border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* BACKGROUND */
 body {
   background-color: var(--main-bg-color);
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
+  cursor: url('/lightsaberPointer.cur'), auto;
 }
 
 .main-bg-image {

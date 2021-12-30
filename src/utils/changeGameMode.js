@@ -1,15 +1,10 @@
-export const changeGameMode = (text, description) => {
-  document.querySelector('.main__header').innerHTML = `MODE: ${text}`;
+export const changeGameMode = (btn) => {
+  window.mode = btn.target.innerText.toLowerCase();
+  const modeObject = document.MODES[window.mode];
+  document.querySelector('.main__header').innerHTML = `MODE: ${modeObject.header}`;
   document.querySelector(
     '.main__description'
-  ).innerHTML = `You have one minute (1m) to answer as many questions as possible. During the game on each question you need to select ${description}`;
-};
-
-export const addListenerToButtons = (btnArr = [], text, description) => {
-  btnArr.forEach((btnClass, index) => {
-    const btn = document.querySelector(btnClass);
-    btn.addEventListener('click', () => changeGameMode(text[index], description[index]));
-  });
+  ).innerHTML = `You have one minute (1m) to answer as many questions as possible. During the game on each question you need to select ${modeObject.description}`;
 };
 
 export default changeGameMode;

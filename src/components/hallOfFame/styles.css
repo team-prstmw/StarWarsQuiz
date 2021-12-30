@@ -1,0 +1,24 @@
+.container-hof {
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+}
+.main__subheader-container img {
+  height: 50px;
+}
+.message {
+  text-align: center;
+}
+.leaderboard {
+  list-style-type: none;
+  padding: 0 20px;
+}
+.leaderboard li {
+  display: flex;
+}
+.leaderboard li p {
+  width: calc(100% / 3);
+  text-align: center;
+}
+.bold {
+  font-weight: 700;
+}
