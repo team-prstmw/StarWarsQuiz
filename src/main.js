@@ -1,7 +1,7 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import MainPhoto from './components/mainPhoto/MainPhoto';
-import getRandomImgSrc from './components/mainPhoto/getRandomImage';
+import { doc } from 'prettier';
 
 document.MODES = {
   people: {
@@ -17,30 +17,27 @@ document.MODES = {
     description: 'what starship from Star Wars is showed in the picture.',
   },
 };
-document.mode = 'characters';
-
 
 const indexPage = new IndexPageModes();
 
-const mainPhoto = new MainPhoto()
+const mainPhoto = new MainPhoto();
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 
 const buttonsContainer = new ButtonsContainer();
 
-
-
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
+const splitted = document.getElementById('main-photo').src.split('/');
+document.mode = splitted[splitted.length - 2];
+const modeDesc = document.MODES[document.mode].header;
+document.querySelector('h2.main__header').innerHTML = modeDesc;
 
-getRandomImgSrc().then((res) => {
-  console.log(res)
-  document.getElementById('main-photo').src = res.src;
-  document.mode = res.category;
-  const modeDesc = document.MODES[document.mode].header
-  document.querySelector('h2.main__header').innerHTML = modeDesc
-});
-
-
-
+// getRandomImgSrc().then((res) => {
+//   console.log(res)
+//   document.getElementById('main-photo').src = res.src;
+//   document.mode = res.category;
+//   const modeDesc = document.MODES[document.mode].header
+//   document.querySelector('h2.main__header').innerHTML = modeDesc
+// });
 
 // document.addListenerToButtons = addListenerToButtons(
 //   ['.btn-characters', '.btn-vehicles', '.btn-starships'],
@@ -51,5 +48,3 @@ getRandomImgSrc().then((res) => {
 //     'what starship from Star Wars is showed in the picture.',
 //   ]
 // );
-
-

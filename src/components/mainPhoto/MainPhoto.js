@@ -1,13 +1,13 @@
 import HtmlElement from '../htmlElement/HtmlElement';
+import getRandomImage from './getRandomImage';
 import './mainPhoto.css';
 
 class MainPhoto extends HtmlElement {
   constructor() {
-    super(['main-photo'], 'img','randomPicture',{
+    super(['main-photo'], 'img', 'randomPicture', {
       id: 'main-photo',
-      src: '',
+      src: '../../../images/modes/' + getRandomImage() + '.jpg',
     });
   }
 }
-
 export default MainPhoto;
