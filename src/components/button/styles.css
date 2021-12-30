@@ -60,7 +60,7 @@
   background-color: rgb(201, 3, 3);
 }
 
-.error-page__button{
+.error-page__button {
   width: 80%;
   min-width: 80%;
 }
@@ -78,7 +78,7 @@
   button.button img {
     width: 18px;
   }
-  button.error-page__button{
+  button.error-page__button {
     min-width: 80%;
   }
 }

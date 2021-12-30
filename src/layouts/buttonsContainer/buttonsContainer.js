@@ -14,7 +14,7 @@ class ButtonsContainer {
     // const ButtonSettings = new Button({ label: 'Settings', type: 'default', width: 'full' });
     const buttonLeft = new Button({
       label: 'Hall of fame',
-      buttonType: 'left',
+      buttonType: 'hof',
       width: 'half',
     });
     const buttonPtg = new Button({
