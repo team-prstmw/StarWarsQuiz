@@ -22,6 +22,9 @@ class Button extends HtmlElement {
     if (this.buttonType === 'default') {
       btn.classList.add('default');
     }
+    if (this.buttonType === 'vanilla') {
+      btn.classList.add('vanilla');
+    }
     if (this.buttonType === 'hof') {
       btn.classList.add('hof');
     }
