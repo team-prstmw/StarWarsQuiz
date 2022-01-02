@@ -8,12 +8,12 @@ document.MODES = {
 };
 
 const MODES_ARRAY = ['people', 'vehicles', 'starships'];
-const modeName = MODES_ARRAY[Math.floor(Math.random() * MODES_ARRAY.length)];
-console.log(modeName);
-const modeDesc = document.MODES[modeName];
+const category = MODES_ARRAY[Math.floor(Math.random() * MODES_ARRAY.length)];
+const modeDesc = document.MODES[category];
 
-const mainPhoto = new MainPhoto();
+const mainPhoto = new MainPhoto(category);
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
+// document.getElementById('main-photo').src = ;
 const splitted = document.getElementById('main-photo').src.split('/');
 document.mode = splitted[splitted.length - 2];
 // const modeDesc = document.MODES[document.mode];
