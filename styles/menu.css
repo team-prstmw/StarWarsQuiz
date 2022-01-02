@@ -133,7 +133,7 @@
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 880px) {
   .burger {
     font-size: 36px;
   }
@@ -149,7 +149,7 @@
   }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: 992px) {
   .burger {
     display: none;
   }
