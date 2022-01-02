@@ -8,11 +8,8 @@ function getRandomImage(category = '') {
   }
 
   const photosInCategory = IMAGES_IDs[category];
-  console.log(photosInCategory);
   const randomImageID = photosInCategory[Math.floor(Math.random() * photosInCategory.length)];
-  console.log(randomImageID, 'mode ');
   const source = `../../../images/modes/${randomImageID}.jpg`;
-  console.log(source);
   return source;
 }
 export default getRandomImage;

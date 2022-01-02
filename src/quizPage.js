@@ -1,5 +1,6 @@
 import QuizContainer from './quizPageElements/QuizContainer';
 import MainPhoto from './components/mainPhoto/MainPhoto';
+import fetchStarWarsData from './fetch';
 
 document.MODES = {
   people: 'Who is this character?',
@@ -13,10 +14,11 @@ const modeDesc = document.MODES[category];
 
 const mainPhoto = new MainPhoto(category);
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
-// document.getElementById('main-photo').src = ;
 const splitted = document.getElementById('main-photo').src.split('/');
 document.mode = splitted[splitted.length - 2];
-// const modeDesc = document.MODES[document.mode];
+
+const correctAnswerId = document.mode + '/' + splitted[splitted.length - 1].split('.')[0];
+fetchStarWarsData(correctAnswerId).then((data) => console.log(data.name));
 
 const fetchedAnswersList = ['answer A', 'answer B', 'answer C', 'answer D'];
 
