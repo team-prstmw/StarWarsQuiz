@@ -1,5 +1,7 @@
 import Button from '../../components/button/Button';
 import changeModeDetail from '../../utils/changeModeDetail';
+import changePages from '../../utils/changePages';
+import QuizPage from '../../quizPage';
 import './styles.css';
 
 class ButtonsContainer {
@@ -31,6 +33,8 @@ class ButtonsContainer {
     hallOfFameImage.src = '/hall_of_fame.svg';
     ButtonLeftRendered.appendChild(hallOfFameImage);
     ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false), { once: true });
+
+    ButtonPtgRendered.addEventListener('click', () => changePages('.index-page__container', '#main-grid-container', QuizPage ,'.quiz-container'))
 
     // this.container.appendChild(ButtonSettingsRendered);
     this.container.appendChild(ButtonLeftRendered);
