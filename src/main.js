@@ -1,4 +1,5 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
+import addListenerToButtons from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import MainPhoto from './components/mainPhoto/MainPhoto';
 
