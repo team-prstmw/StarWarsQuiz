@@ -1,10 +1,10 @@
 .quiz-main-menu {
   display: flex;
   position: fixed;
-  width: 225px;
+  width: 200px;
   height: 100vh;
   top: 0;
-  left: -225px;
+  left: -200px;
   box-sizing: border-box;
   background: rgba(0, 0, 0);
   border-right: solid var(--starwars-yellow) 0.15rem;
@@ -17,7 +17,7 @@
 }
 
 .btn {
-  font-size: 28px;
+  font-size: 20px;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-top: white solid 2px;
@@ -29,7 +29,7 @@
 }
 
 .btn:hover {
-  font-size: 28px;
+  font-size: 20px;
   color: var(--starwars-yellow);
   box-shadow: 1px 1px 100px var(--starwars-yellow);
 }
@@ -45,8 +45,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px 20px;
-  font-size: 25px;
+  padding: 8px 16px;
+  font-size: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -62,13 +62,40 @@
   font-family: Montserrat, sans-serif;
 }
 
-@media screen and (min-width: 360px) {
+@media screen and (min-width: 320px) {
   #main-grid-container {
     display: block;
   }
 
   .sw-logo {
     margin: 2em auto 3em auto;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
+
+  .btn:hover {
+    font-size: 18px;
+  }
+  .active {
+    transform: translateX(200px);
+    transition: transform 0.3s;
+  }
+  .hide {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .burger {
+    font-size: 25px;
+  }
+
+  .quiz-main-menu {
+    width: 225px;
+    left: -225px;
+    border-right: solid var(--starwars-yellow) 0.15rem;
   }
 
   .btn {
@@ -80,10 +107,6 @@
   }
   .active {
     transform: translateX(225px);
-    transition: transform 0.3s;
-  }
-  .hide {
-    display: none;
   }
 }
 
@@ -123,5 +146,57 @@
 
   .active {
     transform: translateX(350px);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .burger {
+    display: none;
+  }
+
+  #main-grid-container {
+    display: grid;
+  }
+
+  .sw-logo {
+    margin: 4em 2em 2em 2em;
+  }
+
+  .quiz-main-menu {
+    position: static;
+    display: flex;
+    width: unset;
+    height: unset;
+    margin-top: 0.5em;
+    grid-area: navbar;
+    margin-right: 2em;
+    border-radius: 3em;
+    border: solid var(--starwars-yellow) 0.2rem;
+    box-shadow: 1px 1px 120px var(--starwars-yellow);
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .btn {
+    font-size: 28px;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    width: max-content;
+    height: max-content;
+    margin: 0.5em;
+    padding: 0 0.5em;
+  }
+
+  .btn:hover {
+    font-size: 28px;
+  }
+
+  .active {
+    transform: unset;
+    transition: unset;
+  }
+
+  .selectMode {
+    display: none;
   }
 }
