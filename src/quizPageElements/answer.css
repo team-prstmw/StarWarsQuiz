@@ -30,8 +30,18 @@
   .quiz-answer {
     border-width: var(--quiz360-border-width);
     font-size: 16px;
-    height: 2.2rem;
+    height: 2rem;
     width: 10rem;
-    padding: 1.2rem 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 361px) {
+  .quiz-answer {
+    border-width: var(--quiz360-border-width);
+    font-size: 20px;
+    height: 2.6rem;
+    width: 220px;
+    padding: 0;
   }
 }

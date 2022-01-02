@@ -1,5 +1,6 @@
 .main-photo {
-  min-width: 250px;
+  min-width: 200px;
+  width: 29vw;
   max-width: 360px;
   grid-area: image;
   justify-self: center;
@@ -7,19 +8,28 @@
   margin-left: 2em;
   margin-top: 2rem;
   margin-right: 1em;
-  width: 29vw;
+  margin-bottom: 0;
+
   height: auto;
   border: 2px solid var(--starwars-yellow);
   border-radius: 24px;
 }
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 360px) {
   .main-photo {
     display: block;
+    width: 200px;
+    align-self: center;
     align-content: center;
-    margin: 4em auto;
-    margin-bottom: 3em;
-    width: 85vw;
-    min-width: 200px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 361px) {
+  .main-photo {
+    width: 300px;
+    display: block;
+    align-content: center;
+    margin: 0 auto;
+    margin-bottom: 0;
   }
 }
