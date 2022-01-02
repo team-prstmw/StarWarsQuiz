@@ -14,9 +14,29 @@ document.body.appendChild(starWarsIntro.render());
 
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 
-setTimeout(function () {
-  hideStarWarsIntro();
-}, 115000);
+if (window.innerWidth < 768) {
+  setTimeout(function () {
+    hideStarWarsIntro();
+  }, 59000);
+} else if (window.innerWidth < 1024) {
+  setTimeout(function () {
+    hideStarWarsIntro();
+  }, 85000);
+} else if (window.innerWidth < 1396) {
+  if (window.innerHeight > window.innerWidth) {
+    setTimeout(function () {
+      hideStarWarsIntro();
+    }, 100000);
+  } else {
+    setTimeout(function () {
+      hideStarWarsIntro();
+    }, 88000);
+  }
+} else {
+  setTimeout(function () {
+    hideStarWarsIntro();
+  }, 79000);
+}
 
 document.addEventListener(
   'keydown',

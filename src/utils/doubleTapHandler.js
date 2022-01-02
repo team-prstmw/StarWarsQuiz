@@ -11,6 +11,16 @@ export function tapHandler(event) {
     return false;
   }
   event.preventDefault();
+
+  document.removeEventListener(
+    'touchstart',
+    (e) => {
+      if (document.querySelector('.intro__container')) {
+        tapHandler(e);
+      }
+    },
+    false
+  );
   return hideStarWarsIntro();
 }
 
