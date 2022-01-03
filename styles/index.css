@@ -11,7 +11,6 @@ body {
   background-color: var(--main-bg-color);
   margin: 0;
   /* overflow: hidden; */
-  cursor: url('/lightsaberPointer.cur'), auto;
 }
 
 .main-bg-image {
@@ -31,7 +30,7 @@ body {
 #main-grid-container {
   height: 100vh;
   flex-grow: 1;
-  max-width: 1960px;
+  max-width: 1600px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -40,8 +39,8 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content '
-    'content-button buttons';
+    'image content ';
+  /* 'content-button buttons'; */
 }
 
 .sw-logo {
@@ -103,7 +102,7 @@ button {
   box-shadow: 1px 1px 100px white;
 }
 
-@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 768px) {
   #main-grid-container {
     display: block;
   }

@@ -1,7 +1,0 @@
-.index-page__container {
-  grid-area: content;
-  align-self: start;
-  padding: 4.5rem 5vw;
-  box-sizing: border-box;
-  width: 100%;
-}
