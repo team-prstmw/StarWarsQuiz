@@ -2,7 +2,7 @@ import Header from '../../components/header/Header';
 import Container from '../../components/container/Container';
 import Rules from '../../components/rules/rules';
 
-import './styles.css';
+import './indexPageModes.css';
 
 class IndexPageModes {
   render() {
