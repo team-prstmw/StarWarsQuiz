@@ -3,7 +3,8 @@ import addListenerToButtons from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import GameOverModal from './layouts/GameOverModal/GameOverModal';
 import changeGameMode from './utils/changeGameMode';
-import ErrorPage from './layouts/errorPage/ErrorPage'
+import ErrorPage from './layouts/errorPage/ErrorPage';
+import MainPhoto from './components/mainPhoto/MainPhoto';
 
 const indexPage = new IndexPageModes();
 const errorPage = new ErrorPage();
@@ -12,10 +13,8 @@ const buttonsContainer = new ButtonsContainer();
 
 // const gameOverModal = new GameOverModal();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render())
 // .appendChild(gameOverModal.render());
 // document.body.appendChild(errorPage.render());
-import MainPhoto from './components/mainPhoto/MainPhoto';
 
 document.MODES = {
   people: {
@@ -32,18 +31,16 @@ document.MODES = {
   },
 };
 
-const indexPage = new IndexPageModes();
-
 const mainPhoto = new MainPhoto();
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
-
-const buttonsContainer = new ButtonsContainer();
 
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 const splitted = document.getElementById('main-photo').src.split('/');
 document.mode = splitted[splitted.length - 2];
 const modeDesc = document.MODES[document.mode].header;
-document.querySelector('h2.main__header').innerHTML = modeDesc;
+document.querySelector('h2.main__header').innerText = modeDesc;
+console.log(document.querySelector('h2.main__header').innerHTML);
+throw new Error('Something went badly wrong!');
 
 document.addListenerToButtons = addListenerToButtons(
   ['.btn-characters', '.btn-vehicles', '.btn-starships'],
