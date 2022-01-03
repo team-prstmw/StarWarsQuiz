@@ -34,12 +34,12 @@ const mainPhoto = new MainPhoto();
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
-// const splitted = document.getElementById('main-photo').src.split('/');
-// document.mode = splitted[splitted.length - 2];
+const splitted = document.getElementById('main-photo').src.split('/');
+document.mode = splitted[splitted.length - 2];
 
-// const modeDesc = document.MODES[document.mode].header;
+const modeDesc = document.MODES[document.mode].header;
 
-// document.querySelector('h2.main__header').innerText = modeDesc;
+document.querySelector('h2.main__header').innerText = modeDesc;
 
 document.mode = 'characters';
 document.querySelector('.quiz-main-menu').addEventListener('click', changeGameMode);
