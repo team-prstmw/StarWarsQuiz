@@ -27,6 +27,7 @@
 .modal-container__game-over-modal {
   width: 1000px;
   max-width: 90%;
+  min-width: 300px;
   background-color: white;
   position: absolute;
   top: 1rem;

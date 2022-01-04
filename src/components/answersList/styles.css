@@ -20,6 +20,11 @@
   width: 100%;
 }
 
+.answers-header-row {
+  padding: 0;
+  margin: 0;
+}
+
 .answers-list-tbody {
   width: 100%;
 }
@@ -29,6 +34,8 @@
   position: sticky;
   background-color: white;
   top: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .answers-list-table::-webkit-scrollbar {

@@ -3,9 +3,8 @@ import Button from '../../components/button/Button';
 import AnswersList from '../../components/answersList/answersList';
 
 class GameOverModal {
-  constructor(playerAnsweredCount = 0, pcAnsweredCount = 0, questionsCount = 0, onDone = () => {}) {
+  constructor(playerAnsweredCount = 0, questionsCount = 0, onDone = () => {}) {
     this.playerAnsweredCount = playerAnsweredCount;
-    this.pcAnsweredCount = pcAnsweredCount;
     this.questionsCount = questionsCount;
     this.onDone = onDone;
     this.inputValue = '';
@@ -67,7 +66,6 @@ class GameOverModal {
 //   userAnswer: '',
 //   correctAnswer: ''
 //     },
-   
 //   ]
 // );
 
@@ -77,7 +75,7 @@ class GameOverModal {
     modalSummary.className = 'modal-container__summary';
     modalMain.className = 'modal-container__main';
     modalAnswersHeader.className = 'modal-container__answers__header'
-    modalAnswers.className = 'modal-container__answers';
+    // modalAnswers.className = 'modal-container__answers';
     yodaImage.className = 'modal-container__yoda-image';
     inputContainer.className = 'modal-container__input-container';
     modalInput.className = 'modal-container__input';
@@ -86,7 +84,7 @@ class GameOverModal {
     closeModalButtonContainer.className = 'modal-container__close-button-container';
 
     modalHeader.innerText = 'game over';
-    modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${this.playerAnsweredCount} questions. And computer guessed ${this.pcAnsweredCount}.`;
+    modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${this.playerAnsweredCount} questions.`;
     modalInputDescription.innerText = 'Please, fill your name in order to receive eternal glory in whole Galaxy!';
     yodaImage.src = '/images/Yoda.png';
     
@@ -103,7 +101,7 @@ class GameOverModal {
     modal.appendChild(closeModalButtonContainer);
     closeModalButtonContainer.appendChild(closeModalButton.render());
     modalAnswers.appendChild(modalAnswersHeader)
-    // modalAnswers.appendChild(answersContainer.render());
+    modalAnswers.appendChild(answersContainer.render());
     modalMain.appendChild(modalAnswers);
     modalMain.appendChild(yodaImage);
     modal.appendChild(inputContainer);
