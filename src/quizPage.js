@@ -14,47 +14,59 @@ document.MODES = {
 const MODES_ARRAY = ['people', 'vehicles', 'starships'];
 document.mode = MODES_ARRAY[Math.floor(Math.random() * MODES_ARRAY.length)];
 const modeDesc = document.MODES[document.mode];
-
 const mainPhoto = new MainPhoto(document.mode);
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 document.setOfQuestion = all_Images[document.mode];
+const quiz = new QuizContainer(modeDesc, ['', '', '', '']);
+document.getElementById('main-grid-container').appendChild(quiz.render());
 
 const splitted = document.getElementById('main-photo').src.split('/');
 const imageID = splitted[splitted.length - 1].split('.')[0];
+let correctAnswerId = document.mode + '/' + imageID;
+document.setOfQuestion.splice(document.setOfQuestion.indexOf(correctAnswerId), 1);
 
-const correctAnswerId = document.mode + '/' + imageID;
-document.setOfQuestion.splice(document.setOfQuestion.indexOf(correctAnswerId));
-
-function popRandomQuestion(array) {
-  return [Math.floor(Math.random() * array.length)];
+function popRandomQuestion(correctAnswer = '') {
+  const randomQuestion = correctAnswer
+    ? correctAnswer
+    : document.setOfQuestion[Math.floor(Math.random() * document.setOfQuestion.length)];
+  document.setOfQuestion.splice(document.setOfQuestion.indexOf(randomQuestion), 1);
+  return randomQuestion;
 }
 
-fetchStarWarsData(correctAnswerId).then((data) => {
-  document.correctAnswer = data.name;
-  fetchStarWarsData(document.mode).then(async (data) => {
-    const indexesToFetch = [];
-    // document.setOfQuestion.splice(document.setOfQuestion)
-    while (indexesToFetch.length < 3) {
-      const randomArrayIndex = Math.floor(Math.random() * data.count);
-      if (indexesToFetch.indexOf(randomArrayIndex) < 0) {
-        indexesToFetch.push(randomArrayIndex);
-      }
-    }
-    const wrongAnswers = await Promise.all(
-      indexesToFetch.map(async (index) => {
-        const pageNr = Math.floor(index / 10) + 1;
-        const indexNr = index % 10;
-        const source = `${document.mode}/?page=${pageNr}`;
-        return await fetchStarWarsData(source).then((data) => data.results[indexNr].name);
-      })
-    );
+function displayAnswers(answers = ['a', 'b', 'c', 'd']) {
+  const answerElements = document.querySelectorAll('.quiz-answer');
+  for (let i = 0; i < answerElements.length; ++i) {
+    answerElements[i].innerHTML = answers[i];
+  }
+}
 
-    document.allAnswers = [document.correctAnswer, ...wrongAnswers];
-    const quiz = new QuizContainer(modeDesc, document.allAnswers);
-    document.getElementById('main-grid-container').appendChild(quiz.render());
+while (document.setOfQuestion.length > 0) {
+  correctAnswerId = popRandomQuestion(correctAnswerId);
+  fetchStarWarsData(correctAnswerId).then((data) => {
+    document.correctAnswer = data.name;
+    fetchStarWarsData(document.mode).then(async (data) => {
+      const indexesToFetch = [];
+      while (indexesToFetch.length < 3) {
+        const randomArrayIndex = Math.floor(Math.random() * data.count);
+        if (indexesToFetch.indexOf(randomArrayIndex) < 0) {
+          indexesToFetch.push(randomArrayIndex);
+        }
+      }
+      const wrongAnswers = await Promise.all(
+        indexesToFetch.map(async (index) => {
+          const pageNr = Math.floor(index / 10) + 1;
+          const indexNr = index % 10;
+          const source = `${document.mode}/?page=${pageNr}`;
+          return await fetchStarWarsData(source).then((data) => data.results[indexNr].name);
+        })
+      );
+      let allAnswers = [document.correctAnswer, ...wrongAnswers];
+      allAnswers = shuffle(allAnswers);
+      displayAnswers(allAnswers);
+    });
   });
-});
-// handleSetOfQuestions();
-// randomize answers order
-// collecting answers
+}
+
+// eventListener
 // showCorrectAnswer()
+// collecting answers
