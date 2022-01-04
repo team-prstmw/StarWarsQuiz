@@ -3,7 +3,6 @@ import MainPhoto from './components/mainPhoto/MainPhoto';
 import fetchStarWarsData from './fetch';
 import all_Images from './components/mainPhoto/all_Images';
 import shuffle from './utils/shuffle';
-import getRandomImage from './components/mainPhoto/getRandomImage';
 
 document.MODES = {
   people: 'Who is this character?',
@@ -30,29 +29,32 @@ correctAnswerId = popRandomQuestion(correctAnswerId);
 
 document.addEventListener('click', function (e) {
   if (e.target.className === 'quiz-answer') {
-    // console.log(e.target.innerHTML, document.correctAnswer);
+    console.log(e.target.innerHTML, document.correctAnswer);
     if (e.target.innerHTML === document.correctAnswer) {
       e.target.style.background = 'green';
       setTimeout(() => {
         e.target.style.background = 'var(--starwars-yellow)';
-        document.getElementById('main-photo').src = getRandomImage(document.mode, document.setOfQuestion);
         quizLogic();
       }, 1000);
     } else {
       e.target.style.background = 'red';
       setTimeout(() => {
         e.target.style.background = 'var(--starwars-yellow)';
-        document.getElementById('main-photo').src = getRandomImage(document.mode, document.setOfQuestion);
         quizLogic();
       }, 1000);
     }
   }
 });
 
+function getImage(id) {
+  return `../../../images/modes/${id}.jpg`;
+}
+
 function popRandomQuestion(correctAnswer = '') {
   const randomQuestion = correctAnswer
     ? correctAnswer
     : document.setOfQuestion[Math.floor(Math.random() * document.setOfQuestion.length)];
+  console.log(randomQuestion);
   document.setOfQuestion.splice(document.setOfQuestion.indexOf(randomQuestion), 1);
   return randomQuestion;
 }
@@ -64,10 +66,9 @@ function displayAnswers(answers = ['a', 'b', 'c', 'd']) {
   }
 }
 
-// document.setOfQuestion.length > 0;
-
 function quizLogic() {
   correctAnswerId = popRandomQuestion();
+
   fetchStarWarsData(correctAnswerId).then((data) => {
     document.correctAnswer = data.name;
     fetchStarWarsData(document.mode).then(async (data) => {
@@ -90,6 +91,7 @@ function quizLogic() {
       let allAnswers = [document.correctAnswer, ...wrongAnswers];
       allAnswers = shuffle(allAnswers);
       displayAnswers(allAnswers);
+      document.getElementById('main-photo').src = getImage(correctAnswerId);
     });
   });
 }
