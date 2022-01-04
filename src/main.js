@@ -1,5 +1,4 @@
 import IndexPageModes from './layouts/IndexPageModes/IndexPageModes';
-import addListenerToButtons from './utils/changeGameMode';
 import ButtonsContainer from './layouts/buttonsContainer/buttonsContainer';
 import GameOverModal from './layouts/GameOverModal/GameOverModal';
 import StarWarsIntro from './layouts/StarWarsIntro/StarWarsIntro';
@@ -69,9 +68,9 @@ document.addEventListener(
 );
 
 document.MODES = {
-  people: {
+  characters: {
     header: 'Who is this character?',
-    description: 'who from Star Wars is showed on the left (Jar Jar Binks right now) from available options.',
+    description: 'who from Star Wars is showed on the left from available options.',
   },
   vehicles: {
     header: 'What kind of vehicle is this?',
@@ -89,5 +88,10 @@ document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 const splitted = document.getElementById('main-photo').src.split('/');
 document.mode = splitted[splitted.length - 2];
+
 const modeDesc = document.MODES[document.mode].header;
+
 document.querySelector('h2.main__header').innerText = modeDesc;
+
+document.mode = 'characters';
+document.querySelector('.quiz-main-menu').addEventListener('click', changeGameMode);
