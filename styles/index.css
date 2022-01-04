@@ -16,10 +16,10 @@ body {
 }
 
 .main-bg-image {
-  display: flex;
+  /*display: flex; *//* według mnie to przeszkadza*/
   justify-content: center;
   width: 100%;
-  height: 170%;
+  height: 110%;
   position: absolute;
   background-position: center;
   background-image: url('/images/background_stars.webp');
@@ -59,4 +59,30 @@ body {
 /* QUIZ MENU CONTENT */
 button {
   cursor: pointer;
+}
+
+@media screen and (min-width: 337px) {
+  .main-bg-image {
+    height: 120%;
+  }
+}
+@media screen and (min-width: 361px) {
+  .main-bg-image {
+    height: 140%;
+  }
+}
+@media screen and (min-width: 400px) {
+  .main-bg-image {
+    height: 150%;
+  }
+}
+@media screen and (min-width: 596px) {
+  .main-bg-image {
+    height: 130%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .main-bg-image {
+    height: 120%;
+  }
 }
