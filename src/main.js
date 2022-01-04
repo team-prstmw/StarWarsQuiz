@@ -13,10 +13,7 @@ const buttonsContainer = new ButtonsContainer();
 
 // const gameOverModal = new GameOverModal();
 
-<<<<<<< HEAD
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
-=======
->>>>>>> develop
 // .appendChild(gameOverModal.render());
 // document.body.appendChild(errorPage.render());
 
