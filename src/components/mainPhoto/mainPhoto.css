@@ -3,7 +3,6 @@
   max-width: 360px;
   grid-area: image;
   justify-self: center;
-  align-self: start;
   margin-left: 2em;
   margin-top: 2rem;
   margin-right: 1em;
@@ -13,7 +12,7 @@
   border-radius: 24px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .main-photo {
     display: block;
     align-content: center;
