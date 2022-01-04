@@ -3,6 +3,7 @@
   max-width: 360px;
   grid-area: image;
   justify-self: center;
+  align-self: start;
   margin-left: 2em;
   margin-top: 2rem;
   margin-right: 1em;
