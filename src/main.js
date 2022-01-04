@@ -68,7 +68,7 @@ document.addEventListener(
 );
 
 document.MODES = {
-  characters: {
+  people: {
     header: 'Who is this character?',
     description: 'who from Star Wars is showed on the left from available options.',
   },
@@ -89,7 +89,7 @@ document.getElementById('main-grid-container').appendChild(indexPage.render()).a
 const splitted = document.getElementById('main-photo').src.split('/');
 document.mode = splitted[splitted.length - 2];
 
-const modeDesc = document.MODES[document.mode].header;
+const modeDesc = `MODE: ${document.MODES[document.mode].header}`;
 
 document.querySelector('h2.main__header').innerText = modeDesc;
 
