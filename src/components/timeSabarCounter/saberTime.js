@@ -1,4 +1,5 @@
 import createHTML from './saberTimeStruct';
+import redirectToTheHomepage from '../../utils/redirectToTheHomepage';
 
 class Time {
   constructor() {
@@ -56,6 +57,9 @@ class Time {
     const bar = document.querySelector('.sabre');
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
+    if(leftPercent === 0){
+      redirectToTheHomepage();
+    }
   }
 
   static countPercent(startTime, miliSeconds) {
