@@ -15,7 +15,7 @@ export class HtmlElement {
       });
     }
 
-    if (this.label) htmlElement.innerText = this.label;
+    if (this.label) htmlElement.innerHTML = this.label;
 
     for (const [key, value] of Object.entries(this.props)) {
       htmlElement.setAttribute(key, value);
