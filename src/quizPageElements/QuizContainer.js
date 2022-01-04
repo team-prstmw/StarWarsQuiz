@@ -21,6 +21,7 @@ export default class QuizContainer {
     for (let i = 0; i < this.answersList.length; i += 1) {
       const answer = new Answer(this.answersList[i]).render();
       answerContainer.appendChild(answer);
+      answer.id = `answer-${i + 1}`;
     }
     this.container.appendChild(answerContainer);
     return this.container;

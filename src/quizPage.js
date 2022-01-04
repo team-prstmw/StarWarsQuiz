@@ -3,6 +3,7 @@ import MainPhoto from './components/mainPhoto/MainPhoto';
 import fetchStarWarsData from './fetch';
 import all_Images from './components/mainPhoto/all_Images';
 import shuffle from './utils/shuffle';
+import getRandomImage from './components/mainPhoto/getRandomImage';
 
 document.MODES = {
   people: 'Who is this character?',
@@ -25,6 +26,29 @@ const imageID = splitted[splitted.length - 1].split('.')[0];
 let correctAnswerId = document.mode + '/' + imageID;
 document.setOfQuestion.splice(document.setOfQuestion.indexOf(correctAnswerId), 1);
 
+correctAnswerId = popRandomQuestion(correctAnswerId);
+
+document.addEventListener('click', function (e) {
+  if (e.target.className === 'quiz-answer') {
+    // console.log(e.target.innerHTML, document.correctAnswer);
+    if (e.target.innerHTML === document.correctAnswer) {
+      e.target.style.background = 'green';
+      setTimeout(() => {
+        e.target.style.background = 'var(--starwars-yellow)';
+        document.getElementById('main-photo').src = getRandomImage(document.mode, document.setOfQuestion);
+        quizLogic();
+      }, 1000);
+    } else {
+      e.target.style.background = 'red';
+      setTimeout(() => {
+        e.target.style.background = 'var(--starwars-yellow)';
+        document.getElementById('main-photo').src = getRandomImage(document.mode, document.setOfQuestion);
+        quizLogic();
+      }, 1000);
+    }
+  }
+});
+
 function popRandomQuestion(correctAnswer = '') {
   const randomQuestion = correctAnswer
     ? correctAnswer
@@ -40,8 +64,10 @@ function displayAnswers(answers = ['a', 'b', 'c', 'd']) {
   }
 }
 
-while (document.setOfQuestion.length > 0) {
-  correctAnswerId = popRandomQuestion(correctAnswerId);
+// document.setOfQuestion.length > 0;
+
+function quizLogic() {
+  correctAnswerId = popRandomQuestion();
   fetchStarWarsData(correctAnswerId).then((data) => {
     document.correctAnswer = data.name;
     fetchStarWarsData(document.mode).then(async (data) => {
@@ -57,6 +83,7 @@ while (document.setOfQuestion.length > 0) {
           const pageNr = Math.floor(index / 10) + 1;
           const indexNr = index % 10;
           const source = `${document.mode}/?page=${pageNr}`;
+
           return await fetchStarWarsData(source).then((data) => data.results[indexNr].name);
         })
       );
