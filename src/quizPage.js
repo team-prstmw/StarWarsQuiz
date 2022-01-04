@@ -10,31 +10,37 @@ document.MODES = {
   starships: 'What kind of starship is this?',
 };
 
+//SETTING INITIAL STATE FOR TESTING PURPOSE
 const MODES_ARRAY = ['people', 'vehicles', 'starships'];
-const category = MODES_ARRAY[Math.floor(Math.random() * MODES_ARRAY.length)];
-const modeDesc = document.MODES[category];
+document.mode = MODES_ARRAY[Math.floor(Math.random() * MODES_ARRAY.length)];
+const modeDesc = document.MODES[document.mode];
 
-document.setOfQuestion = all_Images[category];
-
-const mainPhoto = new MainPhoto(category);
+const mainPhoto = new MainPhoto(document.mode);
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
-const splitted = document.getElementById('main-photo').src.split('/');
-document.mode = splitted[splitted.length - 2];
+document.setOfQuestion = all_Images[document.mode];
 
-const answerInternalID = splitted[splitted.length - 1].split('.')[0];
-const correctAnswerId = document.mode + '/' + answerInternalID;
+const splitted = document.getElementById('main-photo').src.split('/');
+const imageID = splitted[splitted.length - 1].split('.')[0];
+
+const correctAnswerId = document.mode + '/' + imageID;
+document.setOfQuestion.splice(document.setOfQuestion.indexOf(correctAnswerId));
+
+function popRandomQuestion(array) {
+  return [Math.floor(Math.random() * array.length)];
+}
 
 fetchStarWarsData(correctAnswerId).then((data) => {
-  document.answer = data.name;
+  document.correctAnswer = data.name;
   fetchStarWarsData(document.mode).then(async (data) => {
     const indexesToFetch = [];
+    // document.setOfQuestion.splice(document.setOfQuestion)
     while (indexesToFetch.length < 3) {
       const randomArrayIndex = Math.floor(Math.random() * data.count);
       if (indexesToFetch.indexOf(randomArrayIndex) < 0) {
         indexesToFetch.push(randomArrayIndex);
       }
     }
-    const fakes = await Promise.all(
+    const wrongAnswers = await Promise.all(
       indexesToFetch.map(async (index) => {
         const pageNr = Math.floor(index / 10) + 1;
         const indexNr = index % 10;
@@ -42,8 +48,9 @@ fetchStarWarsData(correctAnswerId).then((data) => {
         return await fetchStarWarsData(source).then((data) => data.results[indexNr].name);
       })
     );
-    document.fetchedAnswersList = [document.answer, ...fakes];
-    const quiz = new QuizContainer(modeDesc, document.fetchedAnswersList);
+
+    document.allAnswers = [document.correctAnswer, ...wrongAnswers];
+    const quiz = new QuizContainer(modeDesc, document.allAnswers);
     document.getElementById('main-grid-container').appendChild(quiz.render());
   });
 });
