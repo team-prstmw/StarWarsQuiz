@@ -1,8 +1,9 @@
 export class HtmlElement {
-  constructor(classList = [], htmlTag = null, label = '') {
+  constructor(classList = [], htmlTag = null, label = '', props = {}) {
     this.classList = classList;
     this.htmlTag = htmlTag;
     this.label = label;
+    this.props = props;
   }
 
   render() {
@@ -15,6 +16,10 @@ export class HtmlElement {
     }
 
     if (this.label) htmlElement.innerText = this.label;
+
+    for (const [key, value] of Object.entries(this.props)) {
+      htmlElement.setAttribute(key, value);
+    }
 
     return htmlElement;
   }

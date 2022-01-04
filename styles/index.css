@@ -1,7 +1,9 @@
 :root {
   --main-bg-color: rgb(16, 3, 46);
   --starwars-yellow: rgb(88%, 69%, 0%);
+  --container-bg-color: rgba(0, 0, 0, 0.35);
   --logo-width: 120px;
+  --primary-border-color: rgba(255, 255, 255, 0.2);
 }
 
 /* BACKGROUND */
@@ -28,7 +30,7 @@ body {
 #main-grid-container {
   height: 100vh;
   flex-grow: 1;
-  max-width: 1960px;
+  max-width: 1600px;
   display: grid;
   align-items: center;
   justify-items: center;
@@ -37,8 +39,8 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'content content '
-    'content-button buttons';
+    'image content ';
+  /* 'content-button buttons'; */
 }
 
 .sw-logo {

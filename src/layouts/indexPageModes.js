@@ -13,7 +13,7 @@ export class indexPageModes {
     this.container.innerHTML = '';
     this.container.classList.add('index-page__container');
 
-    this.container.style.gridArea = 'mode-description';
+    this.container.style.gridArea = 'content';
     this.container.style.margin = '0 3rem';
     this.container.style.alignSelf = 'start';
 

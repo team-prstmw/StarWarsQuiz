@@ -1,0 +1,47 @@
+:root {
+  --quiz360-border-width: 2px;
+}
+
+.quiz-container {
+  align-self: start;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2rem;
+  display: flex;
+  backdrop-filter: blur(1px);
+  grid-area: content;
+  margin-top: 6rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  outline: var(--primary-border-color) solid 3px;
+  flex-wrap: wrap;
+  max-width: 750px;
+  justify-content: center;
+  height: fit-content;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.answer-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem 0 2rem 0;
+  justify-content: center;
+  width: 600px;
+  height: fit-content;
+}
+
+@media only screen and (max-width: 360px) {
+  .quiz-container {
+    margin-top: 4rem;
+    box-sizing: border-box;
+    align-items: center;
+    margin: 2rem;
+    min-width: fit-content;
+    outline-width: var(--quiz360-border-width);
+  }
+  .answer-container {
+    margin-top: 0;
+    width: auto;
+    height: fit-content;
+    margin-bottom: 0.75rem;
+  }
+}

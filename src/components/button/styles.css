@@ -20,6 +20,15 @@
   position: relative;
 }
 
+.vanilla {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  color: #ccc;
+}
+
 .hof {
   display: inline-flex;
   flex-direction: row-reverse;
@@ -42,8 +51,22 @@
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
 }
 
+.vanilla:hover {
+  box-shadow: none;
+  color: #ddd;
+}
+
 .ptg:hover {
   background-color: rgb(201, 3, 3);
+}
+
+.error-page__button {
+  width: 80%;
+  min-width: 80%;
+}
+
+.error-page__button:hover {
+  box-shadow: 0 0 40px #9cbb80;
 }
 
 @media only screen and (min-width: 360px) {
@@ -54,6 +77,9 @@
 
   button.button img {
     width: 18px;
+  }
+  button.error-page__button {
+    min-width: 80%;
   }
 }
 
