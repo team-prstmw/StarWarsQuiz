@@ -1,5 +1,6 @@
 import createHTML from './saberTimeStruct';
-import redirectToTheHomepage from '../../utils/redirectToTheHomepage';
+import GameOverModal from '../../layouts/GameOverModal/GameOverModal';
+import changePages, { addElement, removeElement } from '../../utils/changePages';
 
 class Time {
   constructor() {
@@ -58,7 +59,10 @@ class Time {
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
     if(leftPercent === 0){
-      redirectToTheHomepage();
+      // removeElement('#lightSabreProgresBar')
+      // removeElement('.main-photo')
+      // changePages('.quiz-container','#main-grid-container', GameOverModal ,'.modal-container' )
+      addElement('#main-grid-container', GameOverModal ,'.modal-container')
     }
   }
 
@@ -68,7 +72,7 @@ class Time {
 
   setTime() {
     createHTML();
-    this.start('00:15');
+    this.start('00:02');
   }
 }
 
