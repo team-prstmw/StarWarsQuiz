@@ -1,7 +1,9 @@
 #lightSabreProgresBar {
   width: 90%;
-  grid-area: content;
+  grid-area: sabre;
   margin: 0 auto;
+  position: relative;
+  top: -135px;
 }
 
 .sabreCont {

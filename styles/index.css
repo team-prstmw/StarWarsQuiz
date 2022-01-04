@@ -41,8 +41,8 @@ body {
   grid-template-rows: auto 1fr;
   grid-template-areas:
     'logo     navbar '
-    'image content ';
-  /* 'content-button buttons'; */
+    'image content '
+    'sabre sabre';
 }
 
 .sw-logo {

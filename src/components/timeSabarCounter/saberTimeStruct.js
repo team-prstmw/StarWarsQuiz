@@ -34,7 +34,6 @@ function createHTML() {
   divProgresBar.appendChild(divSabre);
   divTimer.appendChild(spanTime);
 
-  // Dodane na czas testow, pozniej jak wleci w docelowe miejsce bedzie inaczej.
   document.getElementById('main-grid-container').appendChild(divOuter);
 }
 

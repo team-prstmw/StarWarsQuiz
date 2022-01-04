@@ -64,11 +64,8 @@ class Time {
 
   setTime() {
     createHTML();
-    this.start('01:00');
+    this.start('00:15');
   }
 }
 
-const test = new Time();
-test.setTime();
-
-// export default Time;
+export default Time;
