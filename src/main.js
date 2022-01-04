@@ -19,4 +19,11 @@ document.addListenerToButtons = addListenerToButtons(
   ]
 );
 
-window.onload = playBackgroundMusic('/audio/galacticIntro.mp3');
+// window.onload = playBackgroundMusic('/audio/galacticIntro.mp3');
+
+document.addEventListener('mouseover', () => {
+  playBackgroundMusic('/audio/galacticIntro.mp3');
+});
+document.addEventListener('touchstart', () => {
+  playBackgroundMusic('/audio/galacticIntro.mp3');
+});
