@@ -1,5 +1,8 @@
 export const changeGameMode = (btn) => {
   window.mode = btn.target.innerText.toLowerCase();
+  if (window.mode === 'characters') {
+    window.mode = 'people';
+  }
   const modeObject = document.MODES[window.mode];
   document.querySelector('.main__header').innerHTML = `MODE: ${modeObject.header}`;
   document.querySelector(
