@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play incredible Star Wars Quiz! Can you beat the others? CLICK TO PLAY!">
+  <title>404 Error Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/3710696c33.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/index.css" />
+
+  <link rel="stylesheet" href="/src/components/button/styles.css">
+  <link rel="stylesheet" href="/src/components/header/styles.css">
+  <link rel="stylesheet" href="/src/components/container/styles.css">
+</head>
+
+<body>
+  <section class="error-page__wrapper">
+    <div class="error-page__container">
+      <img src="/images/yoda.svg" alt="yoda" srcset="" fill='white' width="200px">
+      <h1 class="error-page__header">occurred a 404 error has.</h1>
+      <h2 class="error-page__subheader">How embarrassing...</h2>
+      <button class="button error-page__button">Go to Homepage</button>
+    </div>
+  </section>
+  <script>document.querySelector(".error-page__button").addEventListener('click', function () { window.location.href = '/'; })</script>
+</body>
+
+</html>
