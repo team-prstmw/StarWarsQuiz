@@ -2,7 +2,7 @@ import Button from '../../components/button/Button';
 import changeModeDetail from '../../utils/changeModeDetail';
 import changePages from '../../utils/changePages';
 import QuizPage from '../../quizPage';
-import Time from '../../components/timeSabarCounter/saberTime'
+import Time from '../../components/timeSabarCounter/saberTime';
 import './styles.css';
 
 class ButtonsContainer {
@@ -37,8 +37,12 @@ class ButtonsContainer {
 
     const time = new Time();
 
-    ButtonPtgRendered.addEventListener('click', () => changePages('.index-page__container', '#main-grid-container', QuizPage ,'.quiz-container'))
-    ButtonPtgRendered.addEventListener('click', () => changePages('.index-page__container', '#main-grid-container', time.setTime() ,'.lightSabreProgresBar'))
+    ButtonPtgRendered.addEventListener('click', () =>
+      changePages('.index-page__container', '#main-grid-container', QuizPage, '.quiz-container')
+    );
+    ButtonPtgRendered.addEventListener('click', () => {
+      changePages('.index-page__container', '#main-grid-container', time.setTime(), '.lightSabreProgresBar');
+    });
 
     // this.container.appendChild(ButtonSettingsRendered);
     this.container.appendChild(ButtonLeftRendered);
