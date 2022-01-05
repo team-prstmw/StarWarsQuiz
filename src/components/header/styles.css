@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'StarJedi';
+  src: url('../../../fonts/Starjedi.ttf');
+}
+.main__header,
+.main__subheader {
+  margin: 0;
+  font-size: 1.5rem;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  line-height: 2rem;
+  text-align: center;
+}
+.main__header {
+  padding: 1rem 0.7rem;
+  font-weight: 600;
+}
+
+.main__subheader {
+  padding: 0 1rem;
+  font-weight: 500;
+}
+
+.error-page__header,
+.error-page__subheader {
+  margin: 0;
+  font-family: 'StarJedi';
+  text-align: center;
+  color: #9cbb80;
+}
+
+.error-page__header {
+  padding: 0 1rem;
+  font-size: 2rem;
+}
+.error-page__subheader {
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* @media screen and (min-width: 768px) {
+  .intro__header {
+    margin: 0;
+    font-size: 2rem;
+  }
+} */
+
+@media screen and (min-width: 768px) {
+  .main__header,
+  .main__subheader {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .error-page__header {
+    font-size: 2.5rem;
+  }
+  .error-page__subheader {
+    font-size: 2rem;
+  }
+  .intro__header {
+    font-size: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main__header,
+  .main__subheader {
+    font-size: 2.625rem;
+    line-height: 3.2rem;
+  }
+  .intro__header {
+    font-size: 3.25rem;
+  }
+}

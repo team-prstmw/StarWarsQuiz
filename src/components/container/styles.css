@@ -1,0 +1,118 @@
+.main__header-container,
+.main__modes-container {
+  background-color: white;
+  border-radius: 16px;
+}
+.main__header-container {
+  margin-bottom: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 4px 4px 40px rgba(255, 0, 0, 0.9), inset 4px 5px 4px rgba(0, 0, 0, 0.5);
+}
+.main__modes-container {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.main__modes-container div {
+  padding: 1rem 1rem 2rem 1rem;
+}
+
+.main__subheader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 1rem;
+}
+
+.error-page__container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 320px) and (orientation: landscape) {
+  .error-page__container {
+    height: auto;
+    padding: 1rem 0;
+  }
+}
+@media screen and (min-width: 992px) and (orientation: landscape) {
+  .error-page__container {
+    height: 100vh;
+  }
+}
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  margin-top: 0;
+  margin-bottom: 0;
+  transform: translate(-50%, -50%);
+  color: rgb(75, 213, 238);
+  font-family: var(--intro-font-family);
+  font-weight: 500;
+  font-size: 2rem;
+  opacity: 0;
+  animation: intro 4s ease-out 0.5s;
+  z-index: 2;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slider__container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 150rem;
+  width: 100vw;
+  transform: perspective(350px) rotateX(25deg);
+  transform-origin: 50% 100%;
+  font-family: sans-serif;
+  text-align: justify;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.slider__container::after {
+  position: absolute;
+  bottom: 80%;
+  left: 0;
+  right: 0;
+  top: 0;
+  content: '';
+}
+
+.description__container {
+  position: absolute;
+  top: 100%;
+  animation: slider 115s linear 14s;
+}
+
+@keyframes slider {
+  0% {
+    top: 100%;
+  }
+  100% {
+    top: -200%;
+  }
+}

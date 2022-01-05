@@ -1,0 +1,62 @@
+:root {
+  --main-bg-color: rgb(16, 3, 46);
+  --starwars-yellow: rgb(88%, 69%, 0%);
+  --container-bg-color: rgba(0, 0, 0, 0.35);
+  --logo-width: 120px;
+  --primary-border-color: rgba(255, 255, 255, 0.2);
+  --intro-font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  background-color: var(--main-bg-color);
+  margin: 0;
+  overflow: hidden;
+  cursor: url('/lightsaberPointer.cur'), auto;
+}
+
+.main-bg-image {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 170%;
+  position: absolute;
+  background-position: center;
+  background-image: url('/images/background_stars.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  backdrop-filter: var(--main-bg-color);
+  left: 0;
+}
+
+#main-grid-container {
+  height: 100vh;
+  flex-grow: 1;
+  max-width: 1600px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  row-gap: 10px;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    'logo     navbar '
+    'image content ';
+  /* 'content-button buttons'; */
+}
+
+.sw-logo {
+  grid-area: logo;
+  align-self: start;
+  background-size: 120px;
+  width: var(--logo-width);
+  height: 80px;
+  background-image: url('/images/starwars_logo.png');
+  background-repeat: no-repeat;
+  margin: 4em 2em 2em 2em;
+}
+
+/* QUIZ MENU CONTENT */
+button {
+  cursor: pointer;
+}
