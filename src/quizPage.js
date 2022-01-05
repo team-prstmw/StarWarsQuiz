@@ -80,7 +80,7 @@ function quizLogic() {
     document.correctAnswer = data.name;
     fetchStarWarsData(document.mode).then(async (data) => {
       const indexesToFetch = [];
-      while (indexesToFetch.length < 3) {
+      while (indexesToFetch.length < 4) {
         const randomArrayIndex = Math.floor(Math.random() * data.count);
         if (indexesToFetch.indexOf(randomArrayIndex) < 0) {
           indexesToFetch.push(randomArrayIndex);
@@ -95,11 +95,15 @@ function quizLogic() {
           return await fetchStarWarsData(source).then((data) => data.results[indexNr].name);
         })
       );
-      let allAnswers = [document.correctAnswer, ...wrongAnswers];
+
+      let allAnswers = [
+        document.correctAnswer,
+        ...wrongAnswers.filter((a) => a !== document.correctAnswer).slice(0, 3),
+      ];
       allAnswers = shuffle(allAnswers);
       displayAnswers(allAnswers);
       document.getElementById('main-photo').src = getImage(correctAnswerId);
-      console.log(document.correctAnswers);
+      console.log(document.correctAnswer);
     });
   });
 }
