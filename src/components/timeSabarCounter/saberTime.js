@@ -73,7 +73,7 @@ class Time {
 
   setTime() {
     createHTML();
-    this.start('00:02');
+    this.start('00:45');
   }
 }
 
