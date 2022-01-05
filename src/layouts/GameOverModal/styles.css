@@ -31,6 +31,8 @@
   background-color: white;
   position: absolute;
   top: 1rem;
+  left: 50vw;
+  transform: translate(-50%, 0);
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -117,9 +119,9 @@
 @media only screen and (min-width: 768px) {
   .modal-container__game-over-modal {
     max-height: 100%;
-    top: 56vh;
+    top: 5vh;
     left: 50vw;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0%);
   }
 
   .modal-container__header {

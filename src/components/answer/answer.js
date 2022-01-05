@@ -3,7 +3,7 @@ import './styles.css';
 
 class Answer extends HtmlElement {
   constructor(answer = {}) {
-    super(['answer-container'], 'div');
+    super(['answer-row-container'], 'div');
     this.answer = answer;
   }
 
@@ -16,18 +16,17 @@ class Answer extends HtmlElement {
     const userAnswer = document.createElement('p');
     const correctAnswer = document.createElement('p');
 
-    tableRow.className = 'answer-container';
+    tableRow.className = 'answers-list-container';
     imageTd.className = 'answer-image-td';
     image.className = 'answer-image';
     userAnswer.classList = ['answer'];
     userAnswerTd.className = 'user-answer-td';
     correctAnswerTd.className = 'correct-answer-td';
-    
 
     if (this.answer.userAnswer !== this.answer.correctAnswer) {
       userAnswer.classList.add('answer-incorrect');
     } else {
-      userAnswer.classList.add('answer-correct')
+      userAnswer.classList.add('answer-correct');
     }
     correctAnswer.className = 'answer';
 
