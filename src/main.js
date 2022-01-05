@@ -7,6 +7,7 @@ import { tapHandler } from './utils/doubleTapHandler';
 import changeGameMode from './utils/changeGameMode';
 import ErrorPage from './layouts/errorPage/ErrorPage';
 import MainPhoto from './components/mainPhoto/MainPhoto';
+import playBackgroundMusic from './utils/playBackgroundMusic';
 
 const indexPage = new IndexPageModes();
 const errorPage = new ErrorPage();
@@ -95,3 +96,19 @@ document.querySelector('h2.main__header').innerText = modeDesc;
 
 document.mode = 'characters';
 document.querySelector('.quiz-main-menu').addEventListener('click', changeGameMode);
+// window.onload = playBackgroundMusic('/audio/galacticIntro.mp3');
+
+document.addEventListener(
+  'mouseover',
+  () => {
+    playBackgroundMusic('/audio/galacticIntro.mp3');
+  },
+  { once: true }
+);
+document.addEventListener(
+  'touchstart',
+  () => {
+    playBackgroundMusic('/audio/galacticIntro.mp3');
+  },
+  { once: true }
+);
