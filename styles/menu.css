@@ -17,7 +17,7 @@
 }
 
 .btn {
-  font-size: 20px;
+  font-size: 18px;
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-top: white solid 2px;
@@ -29,7 +29,7 @@
 }
 
 .btn:hover {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--starwars-yellow);
   box-shadow: 1px 1px 100px var(--starwars-yellow);
 }
@@ -62,29 +62,13 @@
   font-family: Montserrat, sans-serif;
 }
 
-@media screen{
-  #main-grid-container {
-    display: block;
-  }
+.hide {
+  display: none;
+}
 
-  .sw-logo {
-    margin: 2em auto 3em auto;
-  }
-
-  .btn {
-    font-size: 18px;
-  }
-
-  .btn:hover {
-    font-size: 18px;
-  }
-  .active {
-    transform: translateX(200px);
-    transition: transform 0.3s;
-  }
-  .hide {
-    display: none;
-  }
+.active {
+  transform: translateX(200px);
+  transition: transform 0.3s;
 }
 
 @media screen and (min-width: 360px) {
