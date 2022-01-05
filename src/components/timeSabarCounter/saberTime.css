@@ -2,8 +2,6 @@
   width: 90%;
   grid-area: sabre;
   margin: 0 auto;
-  position: relative;
-  top: -135px;
 }
 
 .sabreCont {
@@ -40,10 +38,6 @@
 }
 
 @media screen{
-  #lightSabreProgresBar {
-    top: -30px;
-  }
-
   #lightSabreProgresBar img {
     height: 115px;
   }
@@ -71,9 +65,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  #lightSabreProgresBar {
-    top: -20px;
-  }
   #lightSabreProgresBar img {
     height: 160px;
   }

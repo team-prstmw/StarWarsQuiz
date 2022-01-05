@@ -162,6 +162,10 @@
     flex-direction: row;
   }
 
+  .main-bg-image{
+    display: flex;
+  }
+
   .btn {
     font-size: 28px;
     border: 2px solid rgba(0, 0, 0, 0.4);
