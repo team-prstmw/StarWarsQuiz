@@ -10,8 +10,8 @@
   backdrop-filter: blur(1px);
   grid-area: content;
   margin-top: 6rem;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  margin-right: auto;
+  margin-left: auto;
   outline: var(--primary-border-color) solid 3px;
   flex-wrap: wrap;
   max-width: 750px;

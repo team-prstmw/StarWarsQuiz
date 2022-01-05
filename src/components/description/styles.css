@@ -7,16 +7,28 @@
   line-height: 2rem;
 }
 
-@media only screen and (min-width: 768px){
+.slider__description {
+  font-family: var(--intro-font-family);
+  font-size: 2rem;
+  color: #ffe81f;
+}
+
+@media only screen and (min-width: 768px) {
   .main__description {
-  font-size: 1.75rem;
-  line-height: 2.25rem;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+  }
+  .slider__description {
+    font-size: 3.5rem;
   }
 }
 
-@media screen and (min-width: 992px){
+@media screen and (min-width: 992px) {
   .main__description {
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+  .slider__description {
+    font-size: 5rem;
   }
 }
