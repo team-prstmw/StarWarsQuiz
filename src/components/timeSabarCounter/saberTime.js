@@ -63,7 +63,7 @@ class Time {
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
     if (leftPercent === 0) {
-      // addElement('#main-grid-container', GameOverModal, '.modal-container');
+      addElement('#main-grid-container', GameOverModal, '.modal-container');
     }
   }
 
