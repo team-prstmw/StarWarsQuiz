@@ -1,11 +1,9 @@
 import './styles.css';
 import Button from '../../components/button/Button';
+import AnswersList from '../../components/answersList/answersList';
 
 class GameOverModal {
-  constructor(playerAnsweredCount = 0, pcAnsweredCount = 0, questionsCount = 0, onDone = () => {}) {
-    this.playerAnsweredCount = playerAnsweredCount;
-    this.pcAnsweredCount = pcAnsweredCount;
-    this.questionsCount = questionsCount;
+  constructor(onDone = () => {}) {
     this.onDone = onDone;
     this.inputValue = '';
     this.container = document.createElement('div');
@@ -16,7 +14,10 @@ class GameOverModal {
   }
 
   close() {
-    this.container.classList.add('hidden');
+    // this.container.classList.add('hidden'); // backup
+
+    this.container.remove();
+    document.location.reload();
   }
 
   handleDone() {
@@ -30,6 +31,8 @@ class GameOverModal {
   }
 
   render() {
+    let playerCorrectAnswersCount = 0;
+
     this.container.classList = ['modal-container'];
 
     const overlay = document.createElement('div');
@@ -38,6 +41,7 @@ class GameOverModal {
     const modalSummary = document.createElement('p');
     const modalMain = document.createElement('div');
     const modalAnswers = document.createElement('div');
+    const modalAnswersHeader = document.createElement('h4');
     const yodaImage = document.createElement('img');
     const inputContainer = document.createElement('div');
     const modalInput = document.createElement('input');
@@ -56,12 +60,52 @@ class GameOverModal {
       onClick: () => this.close(),
       buttonType: 'vanilla',
     });
+    modalAnswersHeader.innerText = 'Detailed answers';
+
+    let answers = [];
+
+    if (!document.correctAnswers || document.correctAnswers.length === 0) {
+      answers = [
+        {
+          image: 'images/modes/people/1.jpg',
+          userAnswer: 'Luke Skywalker',
+          correctAnswer: 'Luke Skywalker',
+        },
+        {
+          image: 'images/modes/people/2.jpg',
+          userAnswer: 'Han Solo',
+          correctAnswer: 'C-3PO',
+        },
+        {
+          image: 'images/modes/people/3.jpg',
+          userAnswer: 'R2-D2',
+          correctAnswer: 'R2-D2',
+        },
+        {
+          image: 'images/modes/people/4.jpg',
+          userAnswer: 'Darth Wiadro',
+          correctAnswer: 'Darth Vader',
+        },
+        {
+          image: 'images/modes/people/5.jpg',
+          userAnswer: 'Leia',
+          correctAnswer: 'Leia',
+        },
+      ];
+    } else {
+      answers = document.correctAnswers.map((arr) => ({ image: arr[0], userAnswer: arr[1], correctAnswer: arr[2] }));
+    }
+
+    playerCorrectAnswersCount = answers.filter((ans) => ans.userAnswer === ans.correctAnswer).length;
+
+    const answersContainer = new AnswersList(answers);
 
     overlay.className = 'modal-container__overlay';
     modal.className = 'modal-container__game-over-modal';
     modalHeader.className = 'modal-container__header';
     modalSummary.className = 'modal-container__summary';
     modalMain.className = 'modal-container__main';
+    modalAnswersHeader.className = 'modal-container__answers__header';
     modalAnswers.className = 'modal-container__answers';
     yodaImage.className = 'modal-container__yoda-image';
     inputContainer.className = 'modal-container__input-container';
@@ -71,10 +115,9 @@ class GameOverModal {
     closeModalButtonContainer.className = 'modal-container__close-button-container';
 
     modalHeader.innerText = 'game over';
-    modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${this.playerAnsweredCount} questions. And computer guessed ${this.pcAnsweredCount}.`;
+    modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${playerCorrectAnswersCount} questions.`;
     modalInputDescription.innerText = 'Please, fill your name in order to receive eternal glory in whole Galaxy!';
     yodaImage.src = '/images/Yoda.png';
-    modalAnswers.innerText = 'placeholder';
 
     modalInput.onchange = (e) => {
       this.inputValue = e.target.value;
@@ -87,6 +130,8 @@ class GameOverModal {
     modal.appendChild(modalMain);
     modal.appendChild(closeModalButtonContainer);
     closeModalButtonContainer.appendChild(closeModalButton.render());
+    modalAnswers.appendChild(modalAnswersHeader);
+    modalAnswers.appendChild(answersContainer.render());
     modalMain.appendChild(modalAnswers);
     modalMain.appendChild(yodaImage);
     modal.appendChild(inputContainer);
@@ -100,3 +145,5 @@ class GameOverModal {
 }
 
 export default GameOverModal;
+
+document.getElementById('main-grid-container');

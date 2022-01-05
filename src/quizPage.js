@@ -1,7 +1,7 @@
 import QuizContainer from './quizPageElements/QuizContainer';
 import MainPhoto from './components/mainPhoto/MainPhoto';
-import fetchStarWarsData from './fetch';
 import all_Images from './components/mainPhoto/all_Images';
+import fetchStarWarsData from './fetch';
 import shuffle from './utils/shuffle';
 
 document.correctAnswers = [];
@@ -19,9 +19,8 @@ const modeDesc = document.MODES[document.mode];
 const mainPhoto = new MainPhoto(document.mode);
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 document.setOfQuestion = all_Images[document.mode];
-const quiz = new QuizContainer(modeDesc, ['', '', '', '']);
+export const quiz = new QuizContainer(modeDesc, ['', '', '', '']);
 document.getElementById('main-grid-container').appendChild(quiz.render());
-
 const splitted = document.getElementById('main-photo').src.split('/');
 const imageID = splitted[splitted.length - 1].split('.')[0];
 let correctAnswerId = document.mode + '/' + imageID;
@@ -75,7 +74,6 @@ function displayAnswers(answers = ['a', 'b', 'c', 'd']) {
 
 function quizLogic() {
   correctAnswerId = popRandomQuestion();
-
   fetchStarWarsData(correctAnswerId).then((data) => {
     document.correctAnswer = data.name;
     fetchStarWarsData(document.mode).then(async (data) => {

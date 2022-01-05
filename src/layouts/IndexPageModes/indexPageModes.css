@@ -2,8 +2,8 @@
   grid-area: content;
   max-width: 742px;
   margin-top: 2rem;
-  margin-right: 4vw;
-  margin-left: 1.5vw;
+  margin-right: auto;
+  margin-left: auto;
   align-self: start;
   justify-self: center;
   width: 60vw;

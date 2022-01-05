@@ -24,7 +24,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 361px) {
+@media only screen and (max-width: 992px) {
   .main-photo {
     width: 300px;
     display: block;
