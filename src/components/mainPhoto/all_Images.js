@@ -81,11 +81,6 @@ const IMAGES_IDs = {
     'people/81',
     'people/82',
     'people/83',
-    'people/84',
-    'people/85',
-    'people/86',
-    'people/87',
-    'people/88',
     'people/9',
   ],
   vehicles: [

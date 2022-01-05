@@ -103,9 +103,6 @@ function quizLogic() {
       allAnswers = shuffle(allAnswers);
       displayAnswers(allAnswers);
       document.getElementById('main-photo').src = getImage(correctAnswerId);
-      console.log(document.correctAnswer);
     });
   });
 }
-
-// collecting answers

@@ -20,7 +20,7 @@ document.MODES = {
 
 const indexPage = new IndexPageModes();
 
-const mainPhoto = new MainPhoto();
+const mainPhoto = new MainPhoto('people');
 document.getElementById('main-grid-container').appendChild(mainPhoto.render());
 
 const buttonsContainer = new ButtonsContainer();
