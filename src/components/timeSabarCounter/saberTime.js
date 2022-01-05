@@ -23,6 +23,10 @@ class Time {
       this.displayTime(this.calcRemainingTime());
       if (this.isStopped()) {
         this.stop();
+
+        const gameOverModal = new GameOverModal();
+
+        document.getElementById('main-grid-container').appendChild(gameOverModal.render());
       }
     }, 1000);
   }
@@ -59,7 +63,7 @@ class Time {
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
     if (leftPercent === 0) {
-      addElement('#main-grid-container', GameOverModal, '.modal-container');
+      // addElement('#main-grid-container', GameOverModal, '.modal-container');
     }
   }
 

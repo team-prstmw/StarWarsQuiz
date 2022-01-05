@@ -11,16 +11,16 @@ import MainPhoto from './components/mainPhoto/MainPhoto';
 const indexPage = new IndexPageModes();
 const errorPage = new ErrorPage();
 
-// const buttonsContainer = new ButtonsContainer();
+const buttonsContainer = new ButtonsContainer();
 
 // const gameOverModal = new GameOverModal();
 
-document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
+// document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 // .appendChild(gameOverModal.render());
 // document.body.appendChild(errorPage.render());
 const starWarsIntro = new StarWarsIntro();
 
-const buttonsContainer = new ButtonsContainer();
+// const buttonsContainer = new ButtonsContainer();
 
 document.body.appendChild(starWarsIntro.render());
 

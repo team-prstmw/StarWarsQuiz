@@ -31,8 +31,8 @@ class Answer extends HtmlElement {
     correctAnswer.className = 'answer';
 
     image.src = this.answer.image;
-    userAnswer.innerText = this.answer.userAnswer;
-    correctAnswer.innerText = this.answer.correctAnswer;
+    userAnswer.innerText = this.answer.userAnswer.toLowerCase();
+    correctAnswer.innerText = this.answer.correctAnswer.toLowerCase();
 
     imageTd.appendChild(image);
     userAnswerTd.appendChild(userAnswer);
