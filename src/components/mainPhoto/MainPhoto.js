@@ -6,7 +6,7 @@ class MainPhoto extends HtmlElement {
   constructor(category = '') {
     super(['main-photo'], 'img', 'randomPicture', {
       id: 'main-photo',
-      src: getRandomImage(category),
+      // src: getRandomImage(category),
     });
   }
 }

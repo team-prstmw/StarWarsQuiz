@@ -27,22 +27,23 @@ document.setOfQuestion.splice(document.setOfQuestion.indexOf(correctAnswerId), 1
 
 correctAnswerId = popRandomQuestion(correctAnswerId);
 
+quizLogic();
+
 document.addEventListener('click', function (e) {
   if (e.target.className === 'quiz-answer') {
-    console.log(e.target.innerHTML, document.correctAnswer);
+    // console.log(e.target.innerHTML, document.correctAnswer);
+    const answerElements = document.querySelectorAll('.quiz-answer');
     if (e.target.innerHTML === document.correctAnswer) {
       e.target.style.background = 'green';
-      setTimeout(() => {
-        e.target.style.background = 'var(--starwars-yellow)';
-        quizLogic();
-      }, 1000);
     } else {
       e.target.style.background = 'red';
-      setTimeout(() => {
-        e.target.style.background = 'var(--starwars-yellow)';
-        quizLogic();
-      }, 1000);
+      for (let i = 0; i < answerElements.length; i++)
+        if (answerElements[i].innerHTML === document.correctAnswer) answerElements[i].style.background = 'green';
     }
+    setTimeout(() => {
+      for (let i = 0; i < answerElements.length; i++) answerElements[i].style.background = 'var(--starwars-yellow)';
+      quizLogic();
+    }, 1000);
   }
 });
 
