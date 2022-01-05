@@ -4,6 +4,8 @@ import fetchStarWarsData from './fetch';
 import all_Images from './components/mainPhoto/all_Images';
 import shuffle from './utils/shuffle';
 
+document.correctAnswers = [];
+
 document.MODES = {
   people: 'Who is this character?',
   vehicles: 'What kind of vehicle is this?',
@@ -30,16 +32,21 @@ correctAnswerId = popRandomQuestion(correctAnswerId);
 quizLogic();
 
 document.addEventListener('click', function (e) {
+  let correctAnswer;
   if (e.target.className === 'quiz-answer') {
-    // console.log(e.target.innerHTML, document.correctAnswer);
     const answerElements = document.querySelectorAll('.quiz-answer');
     if (e.target.innerHTML === document.correctAnswer) {
       e.target.style.background = 'green';
+      correctAnswer = e.target.innerHTML;
     } else {
       e.target.style.background = 'red';
       for (let i = 0; i < answerElements.length; i++)
-        if (answerElements[i].innerHTML === document.correctAnswer) answerElements[i].style.background = 'green';
+        if (answerElements[i].innerHTML === document.correctAnswer) {
+          answerElements[i].style.background = 'green';
+          correctAnswer = answerElements[i].innerHTML;
+        }
     }
+    document.correctAnswers.push([this.getElementById('main-photo').src, e.target.innerHTML, correctAnswer]);
     setTimeout(() => {
       for (let i = 0; i < answerElements.length; i++) answerElements[i].style.background = 'var(--starwars-yellow)';
       quizLogic();
@@ -55,7 +62,6 @@ function popRandomQuestion(correctAnswer = '') {
   const randomQuestion = correctAnswer
     ? correctAnswer
     : document.setOfQuestion[Math.floor(Math.random() * document.setOfQuestion.length)];
-  console.log(randomQuestion);
   document.setOfQuestion.splice(document.setOfQuestion.indexOf(randomQuestion), 1);
   return randomQuestion;
 }
@@ -93,10 +99,9 @@ function quizLogic() {
       allAnswers = shuffle(allAnswers);
       displayAnswers(allAnswers);
       document.getElementById('main-photo').src = getImage(correctAnswerId);
+      console.log(document.correctAnswers);
     });
   });
 }
 
-// eventListener
-// showCorrectAnswer()
 // collecting answers
