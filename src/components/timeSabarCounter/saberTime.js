@@ -1,4 +1,6 @@
 import createHTML from './saberTimeStruct';
+import GameOverModal from '../../layouts/GameOverModal/GameOverModal';
+import changePages, { addElement, removeElement } from '../../utils/changePages';
 
 class Time {
   constructor() {
@@ -21,6 +23,10 @@ class Time {
       this.displayTime(this.calcRemainingTime());
       if (this.isStopped()) {
         this.stop();
+
+        const gameOverModal = new GameOverModal();
+
+        document.getElementById('main-grid-container').appendChild(gameOverModal.render());
       }
     }, 1000);
   }
@@ -56,6 +62,9 @@ class Time {
     const bar = document.querySelector('.sabre');
     const leftPercent = Time.countPercent(this.limitTime, this.remainingTime);
     bar.style.width = `${leftPercent}%`;
+    if (leftPercent<= 0) {
+      addElement('#main-grid-container', GameOverModal, '.modal-container');
+    }
   }
 
   static countPercent(startTime, miliSeconds) {
@@ -64,11 +73,8 @@ class Time {
 
   setTime() {
     createHTML();
-    this.start('01:00');
+    this.start('1:00');
   }
 }
 
-const test = new Time();
-test.setTime();
-
-// export default Time;
+export default Time;

@@ -6,20 +6,11 @@ import { hideStarWarsIntro } from './utils/hideStarWarsIntro';
 import { tapHandler } from './utils/doubleTapHandler';
 import changeGameMode from './utils/changeGameMode';
 import ErrorPage from './layouts/errorPage/ErrorPage';
-import MainPhoto from './components/mainPhoto/MainPhoto';
+import playBackgroundMusic from './utils/playBackgroundMusic';
 
-const indexPage = new IndexPageModes();
 const errorPage = new ErrorPage();
-
-// const buttonsContainer = new ButtonsContainer();
-
-// const gameOverModal = new GameOverModal();
-
-// .appendChild(gameOverModal.render());
-// document.body.appendChild(errorPage.render());
-const starWarsIntro = new StarWarsIntro();
-
 const buttonsContainer = new ButtonsContainer();
+const starWarsIntro = new StarWarsIntro();
 
 document.body.appendChild(starWarsIntro.render());
 
@@ -82,8 +73,7 @@ document.MODES = {
   },
 };
 
-const mainPhoto = new MainPhoto();
-document.getElementById('main-grid-container').appendChild(mainPhoto.render());
+const indexPage = new IndexPageModes();
 
 document.getElementById('main-grid-container').appendChild(indexPage.render()).appendChild(buttonsContainer.render());
 const splitted = document.getElementById('main-photo').src.split('/');
@@ -93,5 +83,19 @@ const modeDesc = `MODE: ${document.MODES[document.mode].header}`;
 
 document.querySelector('h2.main__header').innerText = modeDesc;
 
-document.mode = 'characters';
 document.querySelector('.quiz-main-menu').addEventListener('click', changeGameMode);
+
+document.addEventListener(
+  'mouseover',
+  () => {
+    playBackgroundMusic('/audio/galacticIntro.mp3');
+  },
+  { once: true }
+);
+document.addEventListener(
+  'touchstart',
+  () => {
+    playBackgroundMusic('/audio/galacticIntro.mp3');
+  },
+  { once: true }
+);

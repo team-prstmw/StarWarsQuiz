@@ -3,10 +3,10 @@ import getRandomImage from './getRandomImage';
 import './mainPhoto.css';
 
 class MainPhoto extends HtmlElement {
-  constructor() {
+  constructor(category = '') {
     super(['main-photo'], 'img', 'randomPicture', {
       id: 'main-photo',
-      src: `../../../images/modes/${getRandomImage()}.jpg`,
+      src: getRandomImage(category),
     });
   }
 }

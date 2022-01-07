@@ -1,6 +1,6 @@
 #lightSabreProgresBar {
   width: 90%;
-  grid-area: content;
+  grid-area: sabre;
   margin: 0 auto;
 }
 
@@ -37,7 +37,7 @@
   opacity: 0.8;
 }
 
-@media screen and (min-width: 360px) {
+@media screen{
   #lightSabreProgresBar img {
     height: 115px;
   }
@@ -104,7 +104,7 @@
 
   #lightSabreProgresBar .timer {
     font-size: 32px;
-    top: -10px;
+    top: -50px;
   }
 }
 

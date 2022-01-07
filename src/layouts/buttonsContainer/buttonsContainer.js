@@ -1,7 +1,8 @@
 import Button from '../../components/button/Button';
 import changeModeDetail from '../../utils/changeModeDetail';
-import changePages from '../../utils/changePages';
-import QuizPage from '../../quizPage';
+import { removeElement } from '../../utils/changePages';
+import { quiz } from '../../quizPage';
+import Time from '../../components/timeSabarCounter/saberTime';
 import './styles.css';
 
 class ButtonsContainer {
@@ -34,7 +35,24 @@ class ButtonsContainer {
     ButtonLeftRendered.appendChild(hallOfFameImage);
     ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false), { once: true });
 
-    ButtonPtgRendered.addEventListener('click', () => changePages('.index-page__container', '#main-grid-container', QuizPage ,'.quiz-container'))
+    const time = new Time();
+
+    const addElement = (parentContainer, ElementToCreate, classOfElementToCreate) => {
+      const container = document.querySelector(parentContainer);
+      if (container.querySelector(classOfElementToCreate)) return;
+      container.appendChild(ElementToCreate);
+    };
+
+    ButtonPtgRendered.addEventListener('click', () => {
+      const quiz1 = document.querySelector('.quiz-container');
+      console.log(quiz1);
+      quiz1.classList.add('show');
+    });
+
+    ButtonPtgRendered.addEventListener('click', () => {
+      removeElement('.index-page__container');
+      addElement('#main-grid-container', time.setTime(), '.lightSabreProgresBar');
+    });
 
     // this.container.appendChild(ButtonSettingsRendered);
     this.container.appendChild(ButtonLeftRendered);
