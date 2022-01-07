@@ -20,6 +20,15 @@
     outline-width: var(--quiz360-border-width);
     font-size: 16px;
     width: 10rem;
-    margin: 2rem 0.5rem 1rem 0.5rem;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+  }
+}
+
+@media only screen and (min-width: 361px) and (max-width: 768px) {
+  .question-text {
+    outline-width: var(--quiz360-border-width);
+    font-size: 20px;
+    width: 15rem;
+    margin: 1rem 0.5rem 1rem 0.5rem;
   }
 }

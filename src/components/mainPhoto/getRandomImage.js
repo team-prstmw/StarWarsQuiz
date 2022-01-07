@@ -1,8 +1,9 @@
 import IMAGES_IDs from './all_Images';
 
-function getRandomImage() {
-  const randomIndex = Math.floor(Math.random() * IMAGES_IDs.length);
-  return IMAGES_IDs[randomIndex];
+function getRandomImage(category = '', imagesCollection = []) {
+  const photosInCategory = !imagesCollection.length ? IMAGES_IDs[category] : imagesCollection;
+  const randomImageID = photosInCategory[Math.floor(Math.random() * photosInCategory.length)];
+  const source = `../../../images/modes/${randomImageID}.jpg`;
+  return source;
 }
-
 export default getRandomImage;
