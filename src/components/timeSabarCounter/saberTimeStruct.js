@@ -1,4 +1,5 @@
 import './saberTime.css';
+import sabreUrl from '/images/sabre.png';
 
 function createHTML() {
   const divOuter = document.createElement('div');
@@ -8,7 +9,7 @@ function createHTML() {
   sabreContainer.classList = 'sabreCont';
 
   const image = document.createElement('img');
-  image.src = 'images/sabre.png';
+  image.src = sabreUrl;
   image.alt = 'Saber shaft';
 
   const divProgresBar = document.createElement('div');
