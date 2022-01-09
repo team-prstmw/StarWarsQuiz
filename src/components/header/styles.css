@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'StarJedi';
-  src: url('../../../fonts/Starjedi.ttf');
+  src: url('/Starjedi.ttf');
 }
 .main__header,
 .main__subheader {

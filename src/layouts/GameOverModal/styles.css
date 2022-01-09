@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Star Jedi';
-  src: url('Starjedi.ttf') format('truetype');
+  src: url('/Starjedi.ttf') format('truetype');
 }
 
 .modal-container {
