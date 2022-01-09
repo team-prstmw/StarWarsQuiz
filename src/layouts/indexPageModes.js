@@ -1,6 +1,7 @@
 import Header from '../components/header/Header';
 import Container from '../components/container/Container';
 import Description from '../components/description/Description';
+import schoolIcon from '/images/school_24px.svg';
 
 export class indexPageModes {
   constructor() {
@@ -36,7 +37,7 @@ export class indexPageModes {
     const modesContainerElementRendered = modesContainerElement.render();
 
     const graduationCapImage = document.createElement('img');
-    graduationCapImage.src = '/school_24px.svg';
+    graduationCapImage.src = schoolIcon;
 
     HeaderContainerElementRendered.appendChild(graduationCapImage);
     HeaderContainerElementRendered.appendChild(headerElement2.render());

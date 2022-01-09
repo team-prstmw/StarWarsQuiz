@@ -2,6 +2,7 @@ import Header from '../../components/header/Header';
 import Container from '../../components/container/Container';
 import Button from '../../components/button/Button';
 import redirectToTheHomepage from '../../utils/redirectToTheHomepage';
+import yodaIcon from '/images/yoda.svg';
 
 class ErrorPage {
   render() {
@@ -14,7 +15,7 @@ class ErrorPage {
 
     // const yodaImage = new Image(['yoda-image'], 'img', '../../images/yoda');
     const yodaImage = document.createElement('img');
-    yodaImage.src = '/images/yoda.svg';
+    yodaImage.src = yodaIcon;
     yodaImage.style.fill = 'white';
     yodaImage.style.width = '200px';
     // const yodaImageRendered = yodaImage.render();

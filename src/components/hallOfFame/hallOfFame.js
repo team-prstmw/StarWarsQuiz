@@ -2,6 +2,7 @@ import Header from '../header/Header';
 import HtmlElement from '../htmlElement/HtmlElement';
 import Container from '../container/Container';
 import './styles.css';
+import hallOfFameIcon from '/public/hall_of_fame.svg';
 
 function nth(n) {
   return ['st', 'nd', 'rd'][((((n + 90) % 100) - 10) % 10) - 1] || 'th';
@@ -20,7 +21,7 @@ export default class HallOfFame {
     const HeaderContainerElementRendered = HeaderContainerElement.render();
 
     const hofImg = document.createElement('img');
-    hofImg.src = '/hall_of_fame.svg';
+    hofImg.src = hallOfFameIcon;
 
     HeaderContainerElementRendered.appendChild(hofImg);
     HeaderContainerElementRendered.appendChild(headerElement2.render());

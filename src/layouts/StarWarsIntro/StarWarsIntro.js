@@ -2,6 +2,7 @@ import Header from '/src/components/header/Header';
 import Container from '/src/components/container/Container';
 import Description from '/src/components/description/Description';
 import './styles.css';
+import starWarsLogo from '/images/starwars_logo.png';
 
 class StarWarsIntro {
   render() {
@@ -14,7 +15,7 @@ class StarWarsIntro {
 
     const logoContainer = new Container(['intro__logo-container'], 'div');
     const logoImage = document.createElement('img');
-    logoImage.src = '/images/starwars_logo.png';
+    logoImage.src = starWarsLogo;
     logoImage.alt = 'Star Wars logo';
 
     const sliderContainer = new Container(['slider__container'], 'div');

@@ -1,5 +1,6 @@
 import HallOfFame from '../components/hallOfFame/hallOfFame';
 import Rules from '../components/rules/rules';
+import hallOfFameIcon from '/public/school_24px.svg';
 
 const changeModeDetail = (isHallOfFame) => {
   const leftButton = document.querySelector('section.container button');
@@ -8,14 +9,14 @@ const changeModeDetail = (isHallOfFame) => {
 
   if (isHallOfFame) {
     leftButton.innerText = 'Hall of Fame';
-    img.src = '/hall_of_fame.svg';
+    img.src = hallOfFameIcon;
     leftButton.appendChild(img);
 
     const rules = new Rules().render();
     mainContainer.innerHTML = rules.outerHTML;
   } else {
     leftButton.innerText = 'Rules';
-    img.src = '/school_24px.svg';
+    img.src = hallOfFameIcon;
     leftButton.appendChild(img);
 
     const hallOfFame = new HallOfFame(document.mode).render();

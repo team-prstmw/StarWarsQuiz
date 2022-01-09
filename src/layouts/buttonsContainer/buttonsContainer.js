@@ -4,6 +4,7 @@ import { removeElement } from '../../utils/changePages';
 import { quiz } from '../../quizPage';
 import Time from '../../components/timeSabarCounter/saberTime';
 import './styles.css';
+import hallOfFameIcon from '/public/hall_of_fame.svg';
 
 class ButtonsContainer {
   constructor() {
@@ -31,7 +32,7 @@ class ButtonsContainer {
     const ButtonPtgRendered = buttonPtg.render();
 
     const hallOfFameImage = document.createElement('img');
-    hallOfFameImage.src = '/hall_of_fame.svg';
+    hallOfFameImage.src = hallOfFameIcon;
     ButtonLeftRendered.appendChild(hallOfFameImage);
     ButtonLeftRendered.addEventListener('click', () => changeModeDetail(false), { once: true });
 

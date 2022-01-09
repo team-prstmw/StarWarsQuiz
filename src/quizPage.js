@@ -54,6 +54,7 @@ document.addEventListener('click', function (e) {
 });
 
 function getImage(id) {
+  return `${new URL('/', import.meta.url).href}/modes/${id}.jpg`;
   return `../../../images/modes/${id}.jpg`;
 }
 

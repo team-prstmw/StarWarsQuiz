@@ -1,6 +1,7 @@
 import './styles.css';
 import Button from '../../components/button/Button';
 import AnswersList from '../../components/answersList/answersList';
+import yodaImg from '/images/Yoda.png';
 
 class GameOverModal {
   constructor(onDone = () => {}) {
@@ -117,7 +118,7 @@ class GameOverModal {
     modalHeader.innerText = 'game over';
     modalSummary.innerText = `The force is strong in you, Padawan! During 1 minute you have answered ${playerCorrectAnswersCount} questions.`;
     modalInputDescription.innerText = 'Please, fill your name in order to receive eternal glory in whole Galaxy!';
-    yodaImage.src = '/images/Yoda.png';
+    yodaImage.src = yodaImg;
 
     modalInput.onchange = (e) => {
       this.inputValue = e.target.value;

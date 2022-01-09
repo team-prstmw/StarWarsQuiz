@@ -1,6 +1,7 @@
 import Header from '../header/Header';
 import Container from '../container/Container';
 import Description from '../description/Description';
+import schoolIcon from '/school_24px.svg';
 
 export default class Rules {
   render() {
@@ -15,7 +16,7 @@ export default class Rules {
     const HeaderContainerElementRendered = HeaderContainerElement.render();
 
     const graduationCapImage = document.createElement('img');
-    graduationCapImage.src = '/school_24px.svg';
+    graduationCapImage.src = schoolIcon;
 
     HeaderContainerElementRendered.appendChild(graduationCapImage);
     HeaderContainerElementRendered.appendChild(headerElement2.render());
